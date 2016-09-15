@@ -1,2 +1,3 @@
-# iagodahlem.com
-My personal website
+# iagodahlem.io
+
+[My personal website](iagodahlem.io)
