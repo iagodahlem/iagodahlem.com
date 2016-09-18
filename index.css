@@ -26,12 +26,12 @@ body {
 
 ::selection {
   color: #fff;
-  background-color: rgba(255, 255, 255, .4);
+  background-color: rgba(255, 255, 255, .2);
 }
 
 ::-moz-selection {
   color: #fff;
-  background-color: rgba(255, 255, 255, .4);
+  background-color: rgba(255, 255, 255, .2);
 }
 
 
