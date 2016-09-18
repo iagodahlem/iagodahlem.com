@@ -41,7 +41,7 @@ body {
 .idl-header {
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 4;
   display: flex;
   align-items: center;
   width: 100%;
@@ -73,9 +73,13 @@ body {
 }
 
 .idl-header__burger {
+  position: absolute;
+  top: 50%;
+  right: 12px;
   display: none;
   width: 22px;
   height: 16px;
+  margin-top: -8px;
   cursor: pointer;
 }
 
@@ -85,6 +89,10 @@ body {
   height: 2px;
   margin-bottom: 5px;
   background-color: #fff;
+}
+
+.idl-burger__bar.is-open .idl-burger__bar--top {
+  transform: rotate(45deg);
 }
 
 .idl-header__list {
@@ -191,6 +199,10 @@ body {
  */
 
 @media screen and (max-width: 720px) {
+  .idl-header__logo {
+    font-size: 1.4em;
+  }
+
   .idl-main__title {
     font-size: 4.5em;
   }
@@ -201,6 +213,49 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+  .idl-header__logo {
+    font-size: 1.2em;
+  }
+
+  .idl-header__burger {
+    display: inline-block;
+  }
+
+  .idl-header__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    padding: 24px 24px 72px;
+    background-color: #212121;
+    text-align: left;
+    will-change: transform;
+    transform: translateX(-100%);
+    transition: all .3s ease-in-out;
+  }
+
+  .idl-header__nav.is-open {
+    transform: translateX(0);
+  }
+
+  .idl-header__nav .idl-header__list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .idl-header__nav .idl-header__link {
+    display: block;
+    padding: 12px 0;
+    color: rgba(255, 255, 255, .8);
+  }
+
+  .idl-header__nav .idl-header__link:hover {
+    display: block;
+    color: #fff;
+    background-color: transparent;
+  }
+
   .idl-main__title {
     font-size: 3.2em;
   }
