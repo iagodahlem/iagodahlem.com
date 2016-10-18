@@ -10,13 +10,16 @@
 @import
   'generic.box-sizing',
   'generic.font-smoothing',
-  'generic.selection';
+  'generic.selection'
+  ;
 
 @import
-  'elements.page';
+  'elements.base';
 
 @import
-  'components.header';
+  'components.header',
+  'components.page'
+  ;
 
 @import
   'utilities.hidden';
