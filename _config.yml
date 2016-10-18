@@ -20,4 +20,4 @@ exclude:
   - Gemfile.lock
 
 sass:
-  style: compressed
+  style: :compressed
