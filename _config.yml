@@ -1,5 +1,5 @@
 # Site settings
-title: Iago Dahlem Lorensini - Front-end Developer
+title: Iago Dahlem Lorensini
 email: iagodahlemlorensini@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   I'm a Front-end Developer current working at CWI Software.
@@ -8,10 +8,11 @@ url: "http://iagodahlem.com" # the base hostname & protocol for your site, e.g. 
 twitter_username: iagodahlem
 github_username:  iagodahlem
 author: Iago Dahlem Lorensini
-lang: en
 
 # Build settings
 markdown: kramdown
+
+permalink: /:title
 
 exclude:
   - node_modules
