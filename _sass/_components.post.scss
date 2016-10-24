@@ -1,12 +1,12 @@
 //
-// Page
+// Post
 // --------------------------------------------------------------------
 
-.idl-page {
+.idl-post {
   height: 100%;
 }
 
-.idl-page__header {
+.idl-post__header {
   position: relative;
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
   height: 100%;
 }
 
-.idl-page__title {
+.idl-post__title {
   position: relative;
   z-index: 3;
   color: #fff;
@@ -27,14 +27,18 @@
   text-transform: uppercase;
   text-align: center;
   transition: opacity .3s ease-in-out;
+
+  @media screen and (max-width: 720px) {
+    font-size: 4.5em;
+  }
 }
 
-.idl-page__title.is-hidden {
+.idl-post__title.is-hidden {
   opacity: 0;
   visibility: hidden;
 }
 
-.idl-page__subtitle {
+.idl-post__subtitle {
   position: relative;
   z-index: 3;
   color: #fff;
@@ -42,22 +46,25 @@
   font-size: 1.8em;
   font-weight: 400;
   text-align: center;
+
+  @media screen and (max-width: 720px) {
+    font-size: 1.6em;
+  }
 }
 
-.idl-page__img {
+.idl-post__img {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-image: url('https://static.pexels.com/photos/60626/pexels-photo-60626.jpeg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.idl-page__img:after {
+.idl-post__img:after {
   content: '';
   position: absolute;
   top: 0;

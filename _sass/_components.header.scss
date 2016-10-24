@@ -24,6 +24,15 @@
   text-transform: uppercase;
   text-decoration: none;
   transition: opacity .3s ease-in-out;
+
+  @media screen and (max-width: 720px) {
+    font-size: 1.4em;
+  }
+
+
+  @media screen and (max-width: 480px) {
+    font-size: 1.2em;
+  }
 }
 
 .idl-header__nav {
@@ -40,6 +49,10 @@
   height: 16px;
   margin-top: -8px;
   cursor: pointer;
+
+  @media screen and (max-width: 480px) {
+    display: inline-block;
+  }
 }
 
 .idl-burger__bar {
@@ -75,4 +88,41 @@
 
 .idl-header__link:hover {
   background-color: rgba(255, 255, 255, .2);
+}
+
+@media screen and (max-width: 480px) {
+  .idl-header__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    padding: 24px 24px 72px;
+    background-color: #212121;
+    text-align: left;
+    will-change: transform;
+    transform: translateX(-100%);
+    transition: all .3s ease-in-out;
+  }
+
+  .idl-header__nav.is-open {
+    transform: translateX(0);
+  }
+
+  .idl-header__nav .idl-header__list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .idl-header__nav .idl-header__link {
+    display: block;
+    padding: 12px 0;
+    color: rgba(255, 255, 255, .8);
+  }
+
+  .idl-header__nav .idl-header__link:hover {
+    display: block;
+    color: #fff;
+    background-color: transparent;
+  }
 }
