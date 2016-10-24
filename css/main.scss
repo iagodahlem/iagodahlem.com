@@ -2,6 +2,24 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@charset "utf-8";
+@charset 'UTF-8';
 
-@import 'base.scss';
+@import
+  'settings.colors';
+
+@import
+  'generic.box-sizing',
+  'generic.font-smoothing',
+  'generic.selection'
+  ;
+
+@import
+  'elements.base';
+
+@import
+  'components.header',
+  'components.page'
+  ;
+
+@import
+  'utilities.hidden';

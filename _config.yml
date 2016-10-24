@@ -19,3 +19,6 @@ exclude:
   - package.json
   - Gemfile
   - Gemfile.lock
+
+sass:
+  style: :compressed

@@ -1,0 +1,69 @@
+//
+// Page
+// --------------------------------------------------------------------
+
+.idl-page {
+  height: 100%;
+}
+
+.idl-page__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.idl-page__title {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  margin: 0 auto 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  transition: opacity .3s ease-in-out;
+}
+
+.idl-page__title.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.idl-page__subtitle {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: 400;
+  text-align: center;
+}
+
+.idl-page__img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://static.pexels.com/photos/60626/pexels-photo-60626.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.idl-page__img:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+}
