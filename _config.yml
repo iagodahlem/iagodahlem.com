@@ -11,14 +11,11 @@ author: Iago Dahlem Lorensini
 
 # Build settings
 markdown: kramdown
-
-permalink: /:title
-
+permalink: /:title/
 exclude:
   - node_modules
   - package.json
   - Gemfile
   - Gemfile.lock
-
 sass:
   style: :compressed
