@@ -34,6 +34,18 @@ body {
   background-color: rgba(255, 255, 255, .2);
 }
 
+.idl-link {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px dotted #fff;
+  transition: all .3s ease;
+}
+
+.idl-link:hover {
+  color: rgba(255,255,255,.6);
+  border-bottom: none;
+}
+
 
 /* Header
  * ---------------------------------- */
