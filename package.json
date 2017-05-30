@@ -1,12 +1,5 @@
 {
   "private": true,
   "name": "iagodahlem.github.io",
-  "description": "My personal website",
-  "scripts": {
-    "dev": "live-server --port=3000 --host=localhost --open=./index.html",
-    "start": "npm run dev"
-  },
-  "devDependencies": {
-    "live-server": "1.1.0"
-  }
+  "description": "My personal website"
 }
