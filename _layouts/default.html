@@ -1,18 +1,9 @@
 ---
-layout: compress
+layout: base
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  {% include head.html %}
-  <body>
-    {% include header.html %}
+{% include header.html %}
 
-    {{ content }}
+{{ content }}
 
-    {% include footer.html %}
-
-    <script src="{{ "/scripts/main.js" | prepend: site.baseurl }}"></script>
-    {% include analytics.html %}
-  </body>
-</html>
+{% include footer.html %}
