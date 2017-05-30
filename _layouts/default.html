@@ -4,12 +4,15 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="en">
-{% include head.html %}
-<body>
-  {% include header.html %}
+  {% include head.html %}
+  <body>
+    {% include header.html %}
 
-  {{ content }}
+    {{ content }}
 
-  {% include footer.html %}
-</body>
+    {% include footer.html %}
+
+    <script src="{{ "/scripts/main.js" | prepend: site.baseurl }}"></script>
+    {% include analytics.html %}
+  </body>
 </html>
