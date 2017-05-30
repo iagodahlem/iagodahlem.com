@@ -10,10 +10,10 @@
 
 @import 'tools/breakpoints';
 
-@import 'generic/box-sizing',;
-@import 'generic/font-smoothing',;
-@import 'generic/reset',;
-@import 'generic/selection',;
+@import 'generic/box-sizing';
+@import 'generic/font-smoothing';
+@import 'generic/reset';
+@import 'generic/selection';
 @import 'generic/tap-highlight';
 
 @import 'elements/page';
@@ -23,7 +23,7 @@
 @import 'layout/grid';
 @import 'layout/header';
 @import 'layout/page';
-@import 'layout/posts';
+@import 'layout/post';
 @import 'layout/wrapper';
 
 @import 'components/button';

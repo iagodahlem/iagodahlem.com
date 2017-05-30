@@ -2,9 +2,11 @@
 // Menu
 // ====================================================================
 
+$menu-z-index: $zIndex-1;
+
 .menu {
   position: fixed;
-  z-index: $zIndex-menu;
+  z-index: $menu-z-index;
   top: 0;
   left: 0;
   width: 100%;

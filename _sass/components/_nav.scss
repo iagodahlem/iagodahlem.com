@@ -2,10 +2,12 @@
 // Nav
 // ====================================================================
 
+$nav-zIndex: $zIndex-1 !default;
+
 .nav {
   position: fixed;
-  z-index: $zIndex-nav;
-  top: $header-height;
+  z-index: $nav-zIndex;
+  top: 80px;
   right: 0;
   width: 80%;
   max-width: 330px;
@@ -47,6 +49,8 @@
 // Nav Item
 // ===========================================
 
+$nav-item-link-weight: $weight-400;
+
 .nav__item {
   display: inline-flex;
 }
@@ -56,7 +60,7 @@
   padding: 1em;
   color: $white;
   font-size: .8em;
-  font-weight: $weight-medium;
+  font-weight: $nav-item-link-weight;
   text-transform: uppercase;
   text-decoration: none;
   outline: none;
