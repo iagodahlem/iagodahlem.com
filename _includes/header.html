@@ -1,29 +1,17 @@
-<div class="menu">
-
+<div class="menu js-menu">
+  {% include nav.html %}
 </div>
 
 <header class="header">
-  <h1 class="header__title" href="/">
-    {{ site.title }}
+  <h1 class="header__title">
+    <a href="/">I.</a>
   </h1>
 
-  <label class="toggle">
+  <label class="header__toggle">
     <span></span>
     <span></span>
     <span></span>
   </label>
 
-  <nav class="nav">
-    <ul class="nav__list">
-      <li class="nav__item">
-        <a class="idl-header__link" href="https://github.com/iagodahlem" target="_blank">Github</a>
-      </li>
-      <li class="nav__item">
-        <a class="idl-header__link" href="https://twitter.com/iagodahlem" target="_blank">Twitter</a>
-      </li>
-      <li class="nav__item">
-        <a class="idl-header__link" href="https://www.linkedin.com/in/iago-dahlem-lorensini-780a445a/" target="_blank">Linkedin</a>
-      </li>
-    </ul>
-  </nav>
+  {% include nav.html %}
 </header>

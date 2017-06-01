@@ -87,16 +87,3 @@ $nav-item-link-weight: $weight-400;
 .menu.menu--visible.menu--animatable .nav {
   transition: all 300ms ease;
 }
-
-//
-// Header
-// ===========================================
-
-.header > .nav {
-  @include breakpoint($mobile) {
-    display: none;
-  }
-  @include breakpoint($tablet) {
-    display: none;
-  }
-}
