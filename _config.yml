@@ -15,11 +15,13 @@ markdown: kramdown
 permalink: /:title/
 
 exclude:
-  - node_modules
-  - package.json
   - Gemfile
   - Gemfile.lock
+  - node_modules
+  - package.json
+  - yarn.lock
   - vendor
+  - ci.sh
 
 sass:
   style: :compressed
