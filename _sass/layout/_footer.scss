@@ -1,3 +1,45 @@
 // ====================================================================
 // Footer
 // ====================================================================
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $gutter;
+  background-color: $black;
+}
+
+//
+// Paragraph
+// ===========================================
+
+.footer__paragraph {
+  color: $white;
+  font-size: .8em;
+}
+
+.footer__paragraph > a {
+  color: $white;
+  border-bottom: 1px dotted $white;
+  transition: border .3s ease-in-out;
+
+  &:hover {
+    border-color: transparent;
+  }
+}
+
+.heart {
+  display: inline-block;
+  color: red;
+  // animation: heartbeat .6s linear infinite running;
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale3d(1,1,1);
+  }
+  to {
+    transform: scale3d(1.2,1.2,1.2);
+  }
+}
