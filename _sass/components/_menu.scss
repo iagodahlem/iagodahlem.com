@@ -2,8 +2,6 @@
 // Menu
 // ====================================================================
 
-$menu-z-index: $zIndex-1;
-
 .menu {
   position: fixed;
   z-index: $menu-z-index;
@@ -14,35 +12,15 @@ $menu-z-index: $zIndex-1;
   overflow: hidden;
   pointer-events: none;
 
+  @include tablet {
+    display: none;
+  }
+
   @include desktop {
     display: none;
   }
 }
 
 .menu.menu--visible {
-  pointer-events: auto;
-}
-
-//
-// Overlay
-// ===========================================
-
-.menu::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,.3);
-  opacity: 0;
-  will-change: opacity;
-  pointer-events: none;
-  transition: opacity .3s cubic-bezier(0,0,.3,1);
-}
-
-.menu.menu--visible::after {
-  opacity: 1;
   pointer-events: auto;
 }

@@ -1,5 +1,5 @@
 // ====================================================================
-// Z Index Scale
+// Z-Index Scale
 // ====================================================================
 
 $zIndex-1:                         100 !default;
@@ -11,3 +11,10 @@ $zIndex-6:                         600 !default;
 $zIndex-7:                         700 !default;
 $zIndex-8:                         800 !default;
 $zIndex-9:                         900 !default;
+
+//
+// Components Z-Index
+// ===========================================
+
+$menu-z-index:                     $zIndex-1 !default;
+$nav-zIndex:                       $zIndex-1 !default;
