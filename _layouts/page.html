@@ -3,16 +3,20 @@ layout: default
 ---
 
 <main class="page">
-  <header class="page__header">
-    <h2 class="page__title">{{ page.title }}</h2>
+  <header class="page__header js-page-header">
+    <div class="wrapper">
+      <h2 class="page__title">
+        {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+      </h2>
 
-    <p class="page__description">
-      {{ page.description }}
-    </p>
+      <p class="page__description">
+        {% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}
+      </p>
+    </div>
 
     <div
-      class="page__img"
-      style="background-image: url({{ page.image }})"
+      class="page__banner"
+      style="background-image:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url({% if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %})"
     ></div>
   </header>
 </main>
