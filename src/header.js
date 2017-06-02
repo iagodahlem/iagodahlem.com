@@ -1,4 +1,4 @@
-import throttle from 'lodash/throttle'
+import debounce from 'lodash/debounce'
 
 const BACKGROUND_VISIBLE = 'header--backgroundVisible'
 const HEADER_UP = 'header--up'
@@ -45,5 +45,5 @@ const scrollHandle = (e) => {
 export default () => {
   toggleBackground()
   toggleFixed()
-  window.addEventListener('scroll', throttle(scrollHandle, 100))
+  window.addEventListener('scroll', debounce(scrollHandle, 100))
 }
