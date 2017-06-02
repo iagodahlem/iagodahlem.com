@@ -7,7 +7,7 @@ rvm:
   - 2.3.1
 
 before_script:
-  - yarn global add webpack
+  - npm install -g webpack
 
 script:
   - yarn test
