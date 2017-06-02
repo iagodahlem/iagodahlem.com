@@ -5,6 +5,10 @@
 .card {
   width: 100%;
 
+  & > a {
+    text-decoration: none;
+  }
+
   &:not(:last-child) {
     margin-bottom: 2em;
   }
@@ -56,6 +60,10 @@
 .card__footer {
   display: flex;
   margin-top: .5em;
+
+  > a:not(:last-child) {
+    text-decoration: none;
+  }
 }
 
 .card__date {

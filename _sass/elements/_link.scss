@@ -3,5 +3,10 @@
 // ====================================================================
 
 a {
-  text-decoration: none;
+  color: $primary;
+  transition: color .1s ease-in-out;
+
+  &:hover {
+    color: $primary-lighter;
+  }
 }
