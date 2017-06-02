@@ -4,9 +4,12 @@ sudo: false
 rvm:
   - 2.3.1
 
-# Assume bundler is being used, therefore
-# the `install` step will run `bundle install` by default.
-script: ./script/ci.sh
+before_script:
+- yarn global add webpack
+- yarn
+
+script:
+  - yarn test
 
 env:
   global:
