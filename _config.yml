@@ -1,9 +1,9 @@
 # Site settings
 title: Iago Dahlem Lorensini
 email: iagodahlemlorensini@gmail.com
-image: /images/home.jpeg
 description: > # this means to ignore newlines until "baseurl:"
   I'm a Front-end Developer current working at Codeminer42.
+image: /images/default.jpeg
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://iagodahlem.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: iagodahlem
@@ -22,7 +22,7 @@ exclude:
   - package.json
   - yarn.lock
   - vendor
-  - ci.sh
+  - scripts
 
 sass:
   style: :compressed

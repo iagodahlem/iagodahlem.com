@@ -14,13 +14,15 @@ layout: default
       </p>
     </div>
 
-    <!-- <div
-      class="page__banner"
-      style="background-image: url({% if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %})"
-    ></div> -->
     <div
       class="page__banner"
-      style="background-image: url(https://images.pexels.com/photos/380852/pexels-photo-380852.jpeg?w=940&h=650&auto=compress&cs=tinysrgb)"
+      style="background-image: url({% if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %})"
     ></div>
   </header>
+
+  <section class="page__section">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </section>
 </main>

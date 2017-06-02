@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<main class="page">
+  <header class="page__header js-page-header">
+    <div class="wrapper">
+      <h2 class="page__title">
+        {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+      </h2>
+
+      <p class="page__description">
+        {% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}
+      </p>
+    </div>
+
+    <div
+      class="page__banner"
+      style="background-image: url({% if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %})"
+    ></div>
+  </header>
+
+  <section class="post page__section">
+    <div class="wrapper">
+      <header class="post__header">
+        <span class="post__date">{{ page.date | date:"%b %d, %Y" }}</span>
+      </header>
+
+      <article class="post__content">
+        {{ content }}
+      </article>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,95 @@
+// ====================================================================
+// Card
+// ====================================================================
+
+.card {
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 2em;
+  }
+}
+
+//
+// Title
+// ===========================================
+
+.card__title {
+  color: $gray-800;
+  font-family: $font-arvo;
+  font-size: 1.3em;
+  font-weight: $weight-500;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 1.6em;
+  }
+
+  @include desktop {
+    font-size: 1.6em;
+  }
+}
+
+//
+// Description
+// ===========================================
+
+.card__description {
+  margin-top: .2em;
+  color: $gray-800;
+  font-family: $font-open-sans;
+  font-size: .9em;
+
+  @include tablet {
+    font-size: 1em;
+  }
+
+  @include desktop {
+    font-size: 1em;
+  }
+}
+
+//
+// Footer
+// ===========================================
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .5em;
+
+  .card__date {
+    color: $gray-500;
+  }
+
+  .card__link {
+    color: $gray-800;
+    border-bottom: 1px solid $gray-700;
+    transition: color .3s ease, border .3s ease;
+
+    &:hover {
+      color: $gray-700;
+      border-color: transparent;
+    }
+  }
+
+  .card__date,
+  .card__link {
+    font-size: .8em;
+    text-transform: uppercase;
+  }
+
+  @include tablet {
+    .card__date,
+    .card__link {
+      font-size: .9em;
+    }
+  }
+
+  @include desktop {
+    .card__date,
+    .card__link {
+      font-size: .9em;
+    }
+  }
+}
