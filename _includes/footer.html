@@ -1,5 +1,9 @@
 <footer class="footer">
+  <div class="footer__social">
+    {% include social.html %}
+  </div>
+
   <p class="footer__paragraph">
-    Made with <span class="heart">&#10084;</span> by <a href="mailto:{{ site.email }}">{{ site.title }}</a>
+    Made with <span class="heart">&#10084;</span> by <a href="mailto:{{ site.email }}">{{ site.author }}</a>
   </p>
 </footer>

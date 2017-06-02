@@ -1,13 +1,14 @@
 // ====================================================================
-// Social
+// List
 // ====================================================================
 
-.social {
-  display: flex;
-  align-items: center;
-  padding: $gutter;
+ul, ol {
+  margin-left: $gutter * 2;
+}
 
-  > *:not(:last-child) {
-    margin-right: 1em;
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
   }
 }

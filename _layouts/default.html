@@ -8,11 +8,14 @@ layout: compress
 <body>
   {% include header.html %}
 
-  {{ content }}
+  <main>
+    {{ content }}
+  </main>
 
   {% include footer.html %}
 
   <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+  <script id="dsq-count-scr" src="//iagodahlem.disqus.com/count.js" async></script>
   {% include analytics.html %}
 </body>
 </html>

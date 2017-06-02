@@ -14,7 +14,7 @@ description: write some description for blog
       </p>
 
       <div class="card__footer">
-        <p class="card__date">{{ post.date | date:"%b %d, %Y" }}</p>
+        <p class="card__date">{{ post.date | date: site.date_format }}</p>
         <a class="card__link" href="{{ post.url }}">Read More</a>
       </div>
     </a>

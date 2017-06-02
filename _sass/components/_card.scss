@@ -55,41 +55,40 @@
 
 .card__footer {
   display: flex;
-  justify-content: space-between;
   margin-top: .5em;
+}
 
-  .card__date {
-    color: $gray-500;
-  }
+.card__date {
+  color: $gray-500;
+}
 
-  .card__link {
-    color: $gray-800;
-    border-bottom: 1px solid $gray-700;
-    transition: color .3s ease, border .3s ease;
+.card__link {
+  margin-left: 1em;
+  color: $gray-800;
+  text-decoration: underline;
+  transition: color .1s ease-in-out;
+}
 
-    &:hover {
-      color: $gray-700;
-      border-color: transparent;
-    }
-  }
+.card:hover .card__link {
+  color: $gray-700;
+}
 
+.card__date,
+.card__link {
+  font-size: .8em;
+  text-transform: uppercase;
+}
+
+@include tablet {
   .card__date,
   .card__link {
-    font-size: .8em;
-    text-transform: uppercase;
+    font-size: .9em;
   }
+}
 
-  @include tablet {
-    .card__date,
-    .card__link {
-      font-size: .9em;
-    }
-  }
-
-  @include desktop {
-    .card__date,
-    .card__link {
-      font-size: .9em;
-    }
+@include desktop {
+  .card__date,
+  .card__link {
+    font-size: .9em;
   }
 }

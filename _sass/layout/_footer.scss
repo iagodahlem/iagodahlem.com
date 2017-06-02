@@ -2,8 +2,12 @@
 // Footer
 // ====================================================================
 
+$footer-color: $gray-300;
+$footer-color-hover: $gray-400;
+
 .footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 4em;
@@ -12,29 +16,47 @@
 }
 
 //
+// Social
+// ===========================================
+
+.footer__social {
+  .social {
+    padding-top: 0;
+  }
+
+  .icon > svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .icon > svg path {
+    fill: $footer-color;
+  }
+  .icon:hover > svg path {
+    fill: $footer-color-hover;
+  }
+}
+
+//
 // Paragraph
 // ===========================================
 
 .footer__paragraph {
-  color: $gray-400;
+  color: $footer-color;
   font-size: .8em;
 }
 
 .footer__paragraph > a {
   color: inherit;
+  text-decoration: underline;
+  transition: all .1s ease-in-out;
+
+  &:hover {
+    color: $footer-color-hover;
+  }
 }
 
 .heart {
   display: inline-block;
   color: red;
-  // animation: heartbeat .6s linear infinite running;
-}
-
-@keyframes heartbeat {
-  from {
-    transform: scale3d(1,1,1);
-  }
-  to {
-    transform: scale3d(1.2,1.2,1.2);
-  }
 }

@@ -1,13 +1,8 @@
 // ====================================================================
-// Social
+// Img
 // ====================================================================
 
-.social {
-  display: flex;
-  align-items: center;
-  padding: $gutter;
-
-  > *:not(:last-child) {
-    margin-right: 1em;
-  }
+img {
+  max-width: 100%;
+  vertical-align: middle;
 }

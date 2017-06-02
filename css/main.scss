@@ -16,20 +16,24 @@
 @import 'generic/selection';
 @import 'generic/tap-highlight';
 
+@import 'elements/code';
+@import 'elements/img';
 @import 'elements/link';
+@import 'elements/list';
 @import 'elements/page';
 @import 'elements/textarea';
 
 @import 'layout/footer';
 @import 'layout/grid';
+@import 'layout/icon';
 @import 'layout/header';
 @import 'layout/page';
 @import 'layout/post';
+@import 'layout/syntax-highlighting';
 @import 'layout/wrapper';
 
 @import 'components/button';
 @import 'components/card';
-@import 'components/icon';
 @import 'components/menu';
 @import 'components/nav';
 @import 'components/social';

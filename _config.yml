@@ -1,14 +1,15 @@
 # Site settings
 title: Iago Dahlem Lorensini
+author: Iago Dahlem Lorensini
 email: iagodahlemlorensini@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   I'm a Front-end Developer current working at Codeminer42.
-image: /images/default.jpeg
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://iagodahlem.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: iagodahlem
 github_username:  iagodahlem
-author: Iago Dahlem Lorensini
+twitter_username: iagodahlem
+date_format: "%b %d, %Y"
+image: /images/default.jpeg
 
 # Build settings
 markdown: kramdown

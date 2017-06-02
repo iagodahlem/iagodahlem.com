@@ -1,13 +1,11 @@
 // ====================================================================
-// Social
+// Table
 // ====================================================================
 
-.social {
-  display: flex;
-  align-items: center;
-  padding: $gutter;
+table {
+  width: 100%;
 
-  > *:not(:last-child) {
-    margin-right: 1em;
+  th {
+    text-align: left;
   }
 }

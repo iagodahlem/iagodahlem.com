@@ -26,18 +26,22 @@
 // ===========================================
 
 .post__content {
+  margin-bottom: 4em;
   font-family: $font-open-sans;
-  color: $gray-800;
 
   h1, h2, h3, h4, h5, h6 {
     font-family: $font-arvo;
     font-weight: $weight-500;
     text-transform: uppercase;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 1em;
   }
 
   h2 {
     font-size: 1.3em;
+
     @include tablet {
       font-size: 1.6em;
     }
@@ -48,6 +52,7 @@
 
   h3 {
     font-size: 1.2em;
+
     @include tablet {
       font-size: 1.4em;
     }
@@ -58,6 +63,7 @@
 
   h4 {
     font-size: 1em;
+
     @include tablet {
       font-size: 1.2em;
     }
@@ -67,24 +73,13 @@
   }
 
   p {
-    margin-bottom: 1em;
     font-size: .9em;
+
     @include tablet {
       font-size: 1em;
     }
     @include desktop {
       font-size: 1em;
     }
-  }
-
-  table {
-    width: 100%;
-    th {
-      text-align: left;
-    }
-  }
-
-  ul {
-    margin-left: 2em;
   }
 }

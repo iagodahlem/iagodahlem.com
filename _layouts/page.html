@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<main class="page">
-  <header class="page__header js-page-header">
+<section class="page">
+  <header class="page__header">
     <div class="wrapper">
       <h2 class="page__title">
         {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
@@ -20,9 +20,7 @@ layout: default
     ></div>
   </header>
 
-  <section class="page__section">
-    <div class="wrapper">
-      {{ content }}
-    </div>
-  </section>
-</main>
+  <div class="page__content wrapper">
+    {{ content }}
+  </div>
+</section>
