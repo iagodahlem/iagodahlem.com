@@ -1,9 +1,9 @@
 import header from './header'
 import menu from './menu'
 
-const loadHandle = () => {
+const main = () => {
   header()
   menu()
 }
 
-window.addEventListener('load', loadHandle)
+main()
