@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Blog
-description: write some description for blog
+description: Guides. Tips. Inspirations. Stories. Experiences.
 ---
 
 {% for post in site.posts %}
@@ -10,7 +10,7 @@ description: write some description for blog
       <h3 class="card__title">{{ post.title }}</h3>
 
       <p class="card__description">
-        {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+        {{ post.description }}
       </p>
 
       <div class="card__footer">
