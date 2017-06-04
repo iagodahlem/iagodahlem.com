@@ -1,0 +1,35 @@
+# Site settings
+title: Iago Dahlem Lorensini
+author: Iago Dahlem Lorensini
+email: iagodahlemlorensini@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  I'm a Front-end Developer working at Codeminer42.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://iagodahlem.com" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  iagodahlem
+twitter_username: iagodahlem
+date_format: "%b %d, %Y"
+image: /images/default.jpeg
+
+gems:
+  - jekyll-paginate
+
+# Build settings
+markdown: kramdown
+
+permalink: /:title/
+
+paginate: 5
+paginate_path: /blog/page:num/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - yarn.lock
+  - vendor
+  - scripts
+
+sass:
+  style: :compressed

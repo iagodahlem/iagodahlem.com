@@ -1,0 +1,13 @@
+// ====================================================================
+// Selection
+// ====================================================================
+
+::selection {
+  color: $white;
+  background-color: rgba($white,.2);
+}
+
+::-moz-selection {
+  color: $white;
+  background-color: rgba($white,.2);
+}
