@@ -89,4 +89,14 @@
   .page__heading {
     margin-bottom: 1.25rem;
   }
+
+  ::selection {
+    color: $white;
+    background-color: $primary;
+  }
+
+  ::-moz-selection {
+    color: $white;
+    background-color: $primary;
+  }
 }
