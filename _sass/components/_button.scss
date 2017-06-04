@@ -9,21 +9,28 @@
   min-width: 122px;
   height: 42px;
   padding: 0 2em;
-  border: 1px solid transparent;
+  background-color: transparent;
+  border: 3px solid $primary;
   border-radius: 50vh;
   box-shadow: 0 3px 8px rgba($black,.05);
+  color: $gray-800;
   font-family: inherit;
   font-size: .8em;
-  transition: background-color .3s ease;
+  font-weight: $weight-500;
+  text-transform: uppercase;
+  text-decoration: none;
   user-select: none;
   outline: none;
   cursor: pointer;
+  transition: all .3s ease;
+
+  &:hover {
+    background-color: $primary;
+    color: $white;
+  }
+  &:active {
+    background-color: $primary-darker;
+    border: 3px solid $primary-darker;
+    color: $white;
+  }
 }
-
-//
-// Color
-// ===========================================
-
-.button--default {}
-.button--primary {}
-.button--accent {}

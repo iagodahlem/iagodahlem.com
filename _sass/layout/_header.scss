@@ -28,14 +28,12 @@ $header-height: 62px !default;
     height: 100%;
     background-color: rgba($black,.7);
     opacity: 0;
-    transform: translate3d(0,-100%,0);
-    transition: all .3s ease;
+    transition: opacity .3s ease;
   }
 }
 
 .header--backgroundVisible::after {
   opacity: 1;
-  transform: translate3d(0,0,0);
 }
 
 .header--up {
