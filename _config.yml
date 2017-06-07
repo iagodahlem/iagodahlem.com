@@ -17,7 +17,7 @@ gems:
 # Build settings
 markdown: kramdown
 
-permalink: /:title/
+permalink: /blog/:title/
 
 paginate: 5
 paginate_path: /blog/page:num/
@@ -29,7 +29,7 @@ exclude:
   - package.json
   - yarn.lock
   - vendor
-  - scripts
+  - new-post.sh
 
 sass:
   style: :compressed
