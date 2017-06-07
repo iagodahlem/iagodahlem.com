@@ -3,10 +3,10 @@
 // ====================================================================
 
 a {
-  color: $primary;
-  transition: color .1s ease-in-out;
+  color: $gray-800;
+  transition: color .2s ease-in-out;
 
   &:hover {
-    color: $primary-darker;
+    color: $gray-700;
   }
 }
