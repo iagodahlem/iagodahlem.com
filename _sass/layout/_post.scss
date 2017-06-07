@@ -39,4 +39,8 @@
   ul {
     margin-bottom: 1.25rem;
   }
+
+  ul > li:not(:last-child) {
+    margin-bottom: .5em;
+  }
 }
