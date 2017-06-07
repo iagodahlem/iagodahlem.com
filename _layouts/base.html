@@ -1,0 +1,14 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+  {{ content }}
+
+  <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+  {% include analytics.html %}
+</body>
+</html>

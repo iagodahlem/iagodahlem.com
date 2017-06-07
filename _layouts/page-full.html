@@ -1,0 +1,26 @@
+---
+layout: base
+---
+
+{% include header.html %}
+
+<main>
+  <section class="page">
+    <header class="page__header js-page-header" data-fullheight="true">
+      <div class="wrapper">
+        <h2 class="page__title">
+          {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+        </h2>
+
+        <p class="page__description">
+          {% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}
+        </p>
+      </div>
+
+      <div
+        class="page__banner"
+        style="background-image: url({% if page.image %}{{ page.image }}{% else %}{{ site.image }}{% endif %})"
+      ></div>
+    </header>
+  </section>
+</main>
