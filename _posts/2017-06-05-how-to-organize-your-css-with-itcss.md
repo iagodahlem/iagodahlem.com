@@ -4,19 +4,19 @@ title: How to Organize Your CSS with ITCSS
 description: A sane, scalable, managed CSS architecture
 ---
 
-Everyone knows how CSS is painful. It's not a expressive language, has global scope, works like a cascade (the source order really matters), inheritance, a lot of hacks to deal with compatibility problems, and the specificity war (if you want to know a litle more about how CSS works, [read this](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Cascade_and_inheritance)). This way how CSS works, opens many doors for bad code. For example, nest selectors to override an rule and take control of him, use `!important` without care about, write more CSS to undo other CSS, and further...
+Everyone knows how CSS is painful. It's not an expressive language, has a global scope, it works like a cascade (the source order really matters), inheritance, a lot of hacks to deal with compatibility problems, and the selectors specificity war (if you want to know a litle more about how CSS works, [read this](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Cascade_and_inheritance)). The way how CSS works, opens many doors for bad code. For example, nested selectors to override a rule and take control of it, use of `!important` without caring about, write more CSS to undo other CSS, and further...
 
-This are some of the problems that we need to dealing with when working with CSS, especially with large scale projects, with a lot of developers envolved working together. So, if we don't be careful or just do not understand this problems, we can end up generating an big giant snow ball, that nobody will want touch or refactor.
+This are some of the problems that we need to deal with when working with CSS, especially for large scale projects, with a lot of developers envolved working together. So, if we don't be careful or just do not understand these problems, we can end up generating a big giant snow ball, that nobody will want to touch or refactor.
 
 ![snow ball](https://media3.giphy.com/media/3oriO6aNSTVP4QfER2/giphy.gif)
 
-But, how solve this problems in a elegant way, be in large or small projects, without hacks, and using CSS to our advantage? Writing CSS in specificity order, and that's where ITCSS comes to help us.
+But, how to solve these problems in an elegant way, be in large or small projects, without hacks, and using CSS to our advantage? Writing CSS in specificity order, and that's where ITCSS comes to help us.
 
 ## ITCSS (Inverted Triangle CSS)
 
-ITCSS, is a CSS architecture created by [Harry Roberts](https://csswizardry.com/) for large CSS code bases, but can also be applied to small projects. It's not a lib, but an way of thought. It's not dependent of any preprocessor or framework, being able to use with only pure CSS, or together with any preprocessor or CSS conventions.
+ITCSS is a CSS architecture created by [Harry Roberts](https://csswizardry.com/) for large CSS code bases, but it can also be applied to small projects. It's not a lib, but a way of thinking. It doesn't dependent of any preprocessor or framework, being able to use it with only pure CSS, or together with any preprocessor or CSS convention.
 
-It consists in organize all your files in layers, from generic to explicit, from low specificity, to high specificity, this layers tame the source order and manage the cascade in a more sane way.
+It consists in organize all your files in layers, from generic to explicit, from low specificity, to high specificity, these layers tame the source order and manage the cascade in a more sane way.
 
 This layers are formed by __sections__, where each section has a specificity and a meaning defined. This way the specificity wars is end up, there is no redundancy, and we has an specificity that grows linearly.
 
