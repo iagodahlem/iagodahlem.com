@@ -87,16 +87,16 @@
   padding-top: 4em;
 
   .page__heading {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.25em;
   }
 
   ::selection {
     color: $white;
-    background-color: $primary;
+    background-color: $gray-800;
   }
 
   ::-moz-selection {
     color: $white;
-    background-color: $primary;
+    background-color: $gray-800;
   }
 }
