@@ -2,11 +2,11 @@
 // Post List
 // ====================================================================
 
-.postList {
+.post-list {
   width: 100%;
 
   &:not(:last-child) {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
 }
 
@@ -14,7 +14,7 @@
 // Title
 // ===========================================
 
-.postList__title {
+.post-list__title {
   font-family: $font-arvo;
   font-size: 1.3em;
   font-weight: $weight-500;
@@ -43,7 +43,7 @@
 // Description
 // ===========================================
 
-.postList__description {
+.post-list__description {
   margin-top: .2em;
   color: $gray-800;
   font-family: $font-open-sans;
@@ -62,20 +62,16 @@
 // Footer
 // ===========================================
 
-.postList__footer {
+.post-list__footer {
   display: flex;
   margin-top: .5em;
-
-  > a:not(:last-child) {
-    text-decoration: none;
-  }
 }
 
-.postList__date {
+.post-list__date {
   color: $gray-500;
 }
 
-.postList__link {
+.post-list__link {
   margin-left: 1em;
   color: $gray-800;
   text-decoration: underline;
@@ -86,22 +82,22 @@
   }
 }
 
-.postList__date,
-.postList__link {
+.post-list__date,
+.post-list__link {
   font-size: .8em;
   text-transform: uppercase;
 }
 
 @include tablet {
-  .postList__date,
-  .postList__link {
+  .post-list__date,
+  .post-list__link {
     font-size: .9em;
   }
 }
 
 @include desktop {
-  .postList__date,
-  .postList__link {
+  .post-list__date,
+  .post-list__link {
     font-size: .9em;
   }
 }
