@@ -1,0 +1,15 @@
+// ====================================================================
+// Blockquote
+// ====================================================================
+
+blockquote {
+  color: $gray-700;
+  border-left: 4px solid $gray-700;
+  padding-left: $gutter;
+  letter-spacing: -1px;
+  font-style: italic;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}

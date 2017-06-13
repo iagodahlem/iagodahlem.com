@@ -35,8 +35,12 @@
     text-transform: uppercase;
   }
 
-  h1, h2, h3, h4, h5, h6, p, ul {
-    margin-bottom: 1.25em;
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 38px;
+  }
+
+  p, ul {
+    margin-top: 16px;
   }
 
   ul > li:not(:last-child) {
