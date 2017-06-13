@@ -6,7 +6,7 @@ description: A sane, scalable, managed CSS architecture
 
 Everyone knows how CSS is painful. It's not an expressive language, has a global scope, it works like a cascade (the source order really matters), inheritance, a lot of hacks to deal with compatibility problems, and the selectors specificity war (if you want to know a litle more about how CSS works, [read this](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Cascade_and_inheritance)). The way how CSS works, opens many doors for bad code. For example, nested selectors to override a rule and take control of it, use of `!important` without caring about, write more CSS to undo other CSS, and further...
 
-This are some of the problems that we need to deal with when working with CSS, especially for large scale projects, with a lot of developers envolved working together. So, if we don't be careful or just do not understand these problems, we can end up generating a big giant snow ball, that nobody will want to touch or refactor.
+This are some of the problems that we need to deal with when working with CSS, especially for large scale projects, with a lot of developers involved working together. So, if we don't be careful or just do not understand these problems, we can end up generating a big giant snow ball, that nobody will want to touch or refactor.
 
 ![snow ball](https://media3.giphy.com/media/3oriO6aNSTVP4QfER2/giphy.gif)
 
@@ -14,13 +14,13 @@ But, how to solve these problems in an elegant way, be in large or small project
 
 ## ITCSS (Inverted Triangle CSS)
 
-ITCSS is a CSS architecture created by [Harry Roberts](https://csswizardry.com/) for large CSS code bases, but it can also be applied to small projects. It's not a lib, but a way of thinking. It doesn't dependent of any preprocessor or framework, being able to use it with only pure CSS, or together with any preprocessor or CSS convention.
+ITCSS is a CSS architecture created by [Harry Roberts](https://csswizardry.com/) for large CSS code bases, but it can also be applied to small projects. It's not a lib, but a way of thinking. It doesn't dependent of any pre-processor or framework, being able to use it with only pure CSS, or together with any pre-processor or CSS convention.
 
 It consists in organize all your files in layers, from generic to explicit, from low specificity, to high specificity, these layers tame the source order and manage the cascade in a more sane way.
 
 This layers are formed by __sections__, where each section has a specificity and a meaning defined. This way the specificity wars is end up, there is no redundancy, and we has an specificity that grows linearly.
 
-With that, everything will have your specific place to live, and that is one of the things that I most like in ITCSS. When all the sections are perfectly understood, and has a concise defined pattern, you and all yout team, will always know where to put something new, or search for an existing file, avoiding a mental mapping while focused. That is, do not need to stop to think in things like:
+With that, everything will have your specific place to live, and that is one of the things that I most like in ITCSS. When all the sections are perfectly understood, and has a concise defined pattern, you and all your team, will always know where to put something new, or search for an existing file, avoiding a mental mapping while focused. That is, do not need to stop to think in things like:
 
 * _"Where do I put this style? Should I create a new file, or just put into an existing one?"_
 * _"Where I putted that class that I wrote last week?"_
@@ -47,7 +47,7 @@ Here will live mixins and functions, like mixins for media queries, font-face, a
 }
 ```
 
-If you do not use a preprocessor, you can just ignore this first two layers.
+If you do not use a pre-processor, you can just ignore this first two layers.
 
 ### Generic
 
@@ -73,11 +73,11 @@ ul {
 }
 ```
 
-In somewheres this layer is called as _base_, I prefer to use _elements_ because they have a more readable name.
+In some places this layer is called as _base_, I prefer to always use _elements_ because they have a more readable name.
 
 ### Objects
 
-Objects, that's the most confused layer to me when there is _Objects_ and _Components_ together. But think in that like using [OOCSS](http://oocss.org/), like the proper author said: _No cosmetics. Agnostically named (e.g. `.ui-list`)._ Here we start to use only CSS classes.
+Objects, that's the most confused layer to me when there is _objects_ and _components_ together. But think in that like using [OOCSS](http://oocss.org/), like the proper author said: _No cosmetics. Agnostically named (e.g. `.ui-list`)._ Here we start to use only CSS classes.
 
 ```scss
 .ui-list {
@@ -91,13 +91,13 @@ Objects, that's the most confused layer to me when there is _Objects_ and _Compo
 }
 ```
 
-Sometimes I prefer to not use this layer, for avoid this confusing mental mapping, like I said previuosly, so I do not need to stop and think: "_Is that a object or a component?_", and remain focused on the real problem.
+Sometimes I prefer to not use this layer, for avoid this confusing mental mapping, like I said previously, so I do not need to stop and think: "_Is that a object or a component?_", and remain focused on the real problem.
 
 That's other thing very nice in ITCSS, you can change and adapt anything to your specific needs.
 
 ### Components
 
-Here, like the autor said, will be designed pieces of UI, still only using classes, with more explicity names.
+Here, like the autor said, will be designed pieces of UI, still only using classes, with more explicitly names.
 
 ```scss
 .products-list {
@@ -128,7 +128,7 @@ How ITCSS is very adaptable and customizable, you can add and remove layers as y
 
 ## Concluding
 
-With ITCSS specificity slowly increases, can be customized with your own specific needs, alowing to scale CSS much more easily, CSS stays much more bigger, but not complicated. So if you wnat to use ITCSS, build an concise pattern with your team, and be rigid with that, then you will see all things in place, and your productivitie improved.
+With ITCSS specificity slowly increases, can be customized with your own specific needs, alowing to scale CSS much more easily, CSS stays much more bigger, but not complicated. So if you want to use ITCSS, build an concise pattern with your team, and be rigid with that, then you will see all things in place, and your productivity improved.
 
 ## References
 
