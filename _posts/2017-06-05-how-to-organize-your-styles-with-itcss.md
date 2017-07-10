@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Organize Your CSS with ITCSS
+title: How to Organize Your styles with ITCSS
 description: A sane, scalable, managed CSS architecture
 ---
 
