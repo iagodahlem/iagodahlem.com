@@ -4,32 +4,36 @@ title: How to Organize Your styles with ITCSS
 description: A sane, scalable, managed CSS architecture
 ---
 
-Everyone knows how CSS is painful. It's not an expressive language, has a global scope, it works like a cascade (the source order really matters), inheritance, a lot of hacks to deal with compatibility problems, and the selectors specificity war (if you want to know a litle more about how CSS works, [read this](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Cascade_and_inheritance)). The way how CSS works, opens many doors for bad code. For example, nested selectors to override a rule and take control of it, use of `!important` without caring about, write more CSS to undo other CSS, and further...
+Everyone knows how CSS can be painful when not written properly. It is not an expressive language, it has a global scope, cascading rules (the source order really matters), inheritance, and selector specificity wars. The way CSS works makes it easy for bad code to take over. It is possible to use nested selectors to override existing rules, use __!important__ to quickly solve a styling problem, write CSS to undo other CSS, and so on.
 
-This are some of the problems that we need to deal with when working with CSS, especially for large scale projects, with a lot of developers involved working together. So, if we don't be careful or just do not understand these problems, we can end up generating a big giant snow ball, that nobody will want to touch or refactor.
+> If you want to know more about how CSS works, [read this](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Cascade_and_inheritance).
 
-![snow ball](https://media3.giphy.com/media/3oriO6aNSTVP4QfER2/giphy.gif)
+![specificity war](../../images/how-to-organize-your-styles-with-itcss/specificity-war.png)
 
-But, how to solve these problems in an elegant way, be in large or small projects, without hacks, and using CSS to our advantage? Writing CSS in specificity order, and that's where ITCSS comes to help us.
+These issues are especially recurring on large projects with lots of developers involved. If we do not understand their impact, our tendency goes toward generating a giant snow ball that nobody wants to touch or refactor.
+
+But how to solve these issues elegantly, be it in large or smaller projects, and using our tools to our advantage? The answer is _by writing CSS in specificity order_, and that’s where ITCSS comes to help!
 
 ## ITCSS (Inverted Triangle CSS)
 
-ITCSS is a CSS architecture created by [Harry Roberts](https://csswizardry.com/) for large CSS code bases, but it can also be applied to small projects. It's not a lib, but a way of thinking. It doesn't dependent of any pre-processor or framework, being able to use it with only pure CSS, or together with any pre-processor or CSS convention.
+ITCSS is an architecture especially suited for large code bases created by [Harry Roberts](https://csswizardry.com/) for large CSS code bases, It is neither a library nor a framework, but a way of thinking. Moreover, it doesn’t really depend on pre-processors such as SASS or LESS. Which means we can apply it with either pure CSS or any pre-processor of our liking. We can also glean the benefits of ITCSS on smaller code bases.
 
-It consists in organize all your files in layers, from generic to explicit, from low specificity, to high specificity, these layers tame the source order and manage the cascade in a more sane way.
+It consists in organizing CSS files within layers, from generic to explicit, and from low to high specificity. These layers tame the source order and manage cascading stylesheets in a more sane way.
 
-This layers are formed by __sections__, where each section has a specificity and a meaning defined. This way the specificity wars is end up, there is no redundancy, and we has an specificity that grows linearly.
+![specificity war](../../images/how-to-organize-your-styles-with-itcss/specificity-order.png)
 
-With that, everything will have your specific place to live, and that is one of the things that I most like in ITCSS. When all the sections are perfectly understood, and has a concise defined pattern, you and all your team, will always know where to put something new, or search for an existing file, avoiding a mental mapping while focused. That is, do not need to stop to think in things like:
+Layers, in turn, are composed of __sections__, each defining a particular specificity and meaning. This is ITCSS’ way to gracefully deal with specificity wars: there is no redundancy, and specificity grows linearly.
 
-* _"Where do I put this style? Should I create a new file, or just put into an existing one?"_
-* _"Where I putted that class that I wrote last week?"_
+With that being said, every concept has a determined place to live in, and this is one of the things I like the most about ITCSS. When all sections are well-defined and perfectly understood, it becomes obvious where to put new files or how to look up for existing code, thus avoiding questions like:
 
-Now, let's see what is each of this sections:
+- "Where do I put this style? Should I create a new file or just put it into an existing one?"
+- "Where did I put that class I wrote last week?"
+
+Now, let’s go over each of these sections.
 
 ### Settings
 
-It's all your global configurations and variables, like sizes, colors and fonts. Here don't has really CSS, just configuration for build.
+_Settings_ refer to all your global configurations and variables, like _sizes_, _colors_, and _fonts_. They should be used to aid in your build configuration, and therefore should not contain actual CSS code. Example:
 
 ```scss
 $color-ui: #bada55;
@@ -38,7 +42,7 @@ $spacing-unit: 10px;
 
 ### Tools
 
-Here will live mixins and functions, like mixins for media queries, font-face, animations, etc. Don't has really CSS here too.
+If you use a pre-processor in your _build_ setup, this is the place where _mixins_ and _functions_ ought to live. For example: _mixins_ for media queries, font-faces, animations, etc.
 
 ```scss
 @mixin font-brand() {
@@ -47,11 +51,13 @@ Here will live mixins and functions, like mixins for media queries, font-face, a
 }
 ```
 
-If you do not use a pre-processor, you can just ignore this first two layers.
+If you do not use a pre-processor, you can safely ignore these first two layers.
 
 ### Generic
 
-Here will be all things that is applied globally, with a low specificity. Think in that like styles that will be applied to all over the DOM. Like box-sizing, resets, normalize, etc. Note that here is the first layer where we use really CSS.
+HHere you should have low-specificity styles which are meant to be applied all over the DOM. These include _box-sizing_, _resets_, _normalize_, etc.
+
+This is the first layer where we can use pure CSS.
 
 ```scss
 *,
@@ -61,11 +67,11 @@ Here will be all things that is applied globally, with a low specificity. Think 
 }
 ```
 
-I like to put here too, somethings like [text selection](https://github.com/iagodahlem/iagodahlem.github.io/blob/master/_sass/generic/_selection.scss), [font-smoothing](https://github.com/iagodahlem/iagodahlem.github.io/blob/master/_sass/generic/_font-smoothing.scss) and [tap-highlight reset](https://github.com/iagodahlem/iagodahlem.github.io/blob/master/_sass/generic/_tap-highlight.scss).
+Personally, I enjoy having in this section styles such as [text selection](https://github.com/iagodahlem/iagodahlem.github.io/blob/master/_sass/generic/_selection.scss), [font-smoothing](https://github.com/iagodahlem/iagodahlem.github.io/blob/master/_sass/generic/_font-smoothing.scss) and [tap-highlight reset](https://github.com/iagodahlem/iagodahlem.github.io/blob/master/_sass/generic/_tap-highlight.scss).
 
 ### Elements
 
-Here is all the unclassed HTML elements, here the style will be applied to only one specific element, like headings, links and lists. Is the last layer where we use type selectors.
+_Elements_ refer to all _unclassed_ HTML tags. Styles in here get applied to specific HTML tags, like _headings_, _links_, and _lists_. This is the last layer where we use type selectors.
 
 ```scss
 ul {
@@ -73,11 +79,13 @@ ul {
 }
 ```
 
-In some places this layer is called as _base_, I prefer to always use _elements_ because they have a more readable name.
+Although this layer is sometimes called _"base"_, I prefer to name it _elements_, due to it being a more readable name.
 
 ### Objects
 
-Objects, that's the most confused layer to me when there is _objects_ and _components_ together. But think in that like using [OOCSS](http://oocss.org/), like the proper author said: _No cosmetics. Agnostically named (e.g. `.ui-list`)._ Here we start to use only CSS classes.
+_Objects_ follow [OOCSS](http://oocss.org/) (Object Oriented CSS) principles. They are small and reusable pieces with no aesthetics which can be used in UI composition. Examples are _wrappers_, _grids_, _skins_ to apply to _lists_, _buttons_, _inputs_, etc. In other words: any pattern that is repeated over your UI is a potential _object_ candidate. What ITCSS author said applies to this layer: No cosmetics. Agnostically named (e.g. .ui-list).
+
+Here we start using just CSS classes:
 
 ```scss
 .ui-list {
@@ -91,13 +99,13 @@ Objects, that's the most confused layer to me when there is _objects_ and _compo
 }
 ```
 
-Sometimes I prefer to not use this layer, for avoid this confusing mental mapping, like I said previously, so I do not need to stop and think: "_Is that a object or a component?_", and remain focused on the real problem.
+I find _objects_ to be the most confusing layer due to it mixing _objects_ and _components_. If you do not use OOCSS or find it confusing, just skip this layer. I personally prefer to skip it entirely to avoid confused mental mapping. That avoids me to stop and think: _“Is that an object or a component?"_, and to remain focused on the real problem.
 
-That's other thing very nice in ITCSS, you can change and adapt anything to your specific needs.
+This is yet another nice aspect of ITCSS: you can change and adapt anything to your specific needs.
 
 ### Components
 
-Here, like the autor said, will be designed pieces of UI, still only using classes, with more explicitly names.
+In this layer, like the author said, you should have well-designed pieces of UI that can be reused in more than one spot (or be applied to just one spot). Also, classes must be named explicitly:
 
 ```scss
 .products-list {
@@ -110,11 +118,17 @@ Here, like the autor said, will be designed pieces of UI, still only using class
 }
 ```
 
-In this layer, I like to think that will be all the small independent pieces of the UI, like `.button`, `.input`, etc. And if I need to style more specific parts of the UI, that is, less independent parts, I add an new layer, called _pages_, or _layout_, depending on the specificity of this style, or the pattern adopted by the team.
+So, there’s a basic difference between _objects_ and _components_. The former refers to generic, abstract pieces of UI with no aesthetic, whereas the latter is a more specific layer targeted at reusability and well-defined aesthetics.
+
+If you choose not to use the _objects_ layer, you can use components to handle _all small, independent, generic, and reusable pieces of your UI_, like `.button`, `.input`, etc.
+
+If you need to style _even more specific_ parts of your UI, you can add a new layer called _pages_ or _layout_, depending on the specificity of your styles and the pattern adopted by your team.
 
 ### Trumps
 
-Here will be overrides, helpers, utilities, specific classes that affect only one piece of the DOM, like, `.hidden`, `.relative`, `.one-half`, etc. Here can be used `!important`, because we need to override the other layers.
+Here you can have _overrides_, _helpers_, _utilities_, and specific classes that affect single pieces of the DOM, like, `.hidden`, `.relative`, `.one-half`, etc.
+
+Because we need to override settings coming from other layers, this is the __only__ place where `!important` is permitted.
 
 ```scss
 .one-half {
@@ -122,16 +136,20 @@ Here will be overrides, helpers, utilities, specific classes that affect only on
 }
 ```
 
+However, be careful and don’t let this layer grow out of bounds! Try to add coherent classes to it, and avoid overriding styles with `!important` just for the sake of it.
+
+![specificity war](../../images/how-to-organize-your-styles-with-itcss/sections-specificity.png)
+
 ### Extra
 
-How ITCSS is very adaptable and customizable, you can add and remove layers as you wish or as you need to scale. For example, if you need theming, you can add a _theme_ layer between components and trumps.
+Because ITCSS is very adaptable and customizable, you can add and remove layers as you wish or need to scale. For example, you can add a _theme_ layer between components and trumps if you need specific theming.
 
 ## Concluding
 
-With ITCSS specificity slowly increases, can be customized with your own specific needs, alowing to scale CSS much more easily, CSS stays much more bigger, but not complicated. So if you want to use ITCSS, build an concise pattern with your team, and be rigid with that, then you will see all things in place, and your productivity improved.
+With ITCSS, specificity slowly increases and can be customized according to specific needs. Therefore, it allows your CSS to scale much more easily. If you found this idea attractive and want to stick to it, I recommend you define a concise pattern with your team and be rigid with it. Benefits are that you will finally have all of your code in predictable spots, thus bumping up everyone’s productivity!
 
 ## References
 
-This post were based on Harry Roberts [presentation](https://speakerdeck.com/dafed/managing-css-projects-with-itcss), with my own thoughts. Take a look if you want to go a litle further.
+This post was based on [Harry Roberts presentation](https://speakerdeck.com/dafed/managing-css-projects-with-itcss),  with my own thoughts added. Take a look at it if you want to go a little further.
 
-Thanks.
+Thank you.
