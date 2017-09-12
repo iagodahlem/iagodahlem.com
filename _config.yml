@@ -11,7 +11,7 @@ twitter_username: iagodahlem
 date_format: "%b %d, %Y"
 image: /images/default.jpeg
 
-gems:
+plugins:
   - jekyll-paginate
 
 # Build settings
