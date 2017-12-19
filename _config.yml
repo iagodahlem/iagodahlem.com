@@ -5,7 +5,7 @@ email: iagodahlemlorensini@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   I'm a Front-end Developer working at Codeminer42.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://iagodahlem.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://iagodahlem.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  iagodahlem
 twitter_username: iagodahlem
 date_format: "%b %d, %Y"
