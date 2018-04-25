@@ -9,18 +9,30 @@ url: "https://iagodahlem.com" # the base hostname & protocol for your site, e.g.
 github_username:  iagodahlem
 twitter_username: iagodahlem
 date_format: "%b %d, %Y"
-image: /images/default.jpeg
+image: https://res.cloudinary.com/iagodahlem/image/upload/c_scale,f_auto,q_auto,w_1600/v1524673942/iagodahlem.github.io/index.jpg
 
 plugins:
   - jekyll-paginate
 
-# Build settings
 markdown: kramdown
 
 permalink: /blog/:title/
 
+sass:
+  style: :compressed
+
 paginate: 5
 paginate_path: /blog/page:num/
+
+cloudinary:
+  cloud_name: iagodahlem
+  presets:
+    default:
+      min_width: 320
+      max_width: 1600
+      fallback_max_width: 800
+      steps: 5
+      sizes: '(min-width: 50rem) 50rem, 90vw'
 
 exclude:
   - Gemfile
@@ -30,6 +42,3 @@ exclude:
   - yarn.lock
   - vendor
   - new-post.sh
-
-sass:
-  style: :compressed
