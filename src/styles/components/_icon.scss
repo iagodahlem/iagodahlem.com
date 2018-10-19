@@ -1,0 +1,62 @@
+// ====================================================================
+// Hamburger
+// ====================================================================
+
+.Hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: $header-height;
+  height: 100%;
+  margin-right: -#{$gutter};
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  overflow: hidden;
+
+  & > span {
+    display: inline-flex;
+    width: 20px;
+    height: 2px;
+    background-color: $white;
+    opacity: 1;
+    transition: opacity .3s ease;
+
+    &:nth-child(2) {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &:hover > span {
+    opacity: .6;
+  }
+}
+
+// ====================================================================
+// Times
+// ====================================================================
+
+.Times {
+  position: relative;
+  width: 18px;
+  height: 18px;
+
+  & > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: $white;
+
+    &:nth-child(1) {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    &:nth-child(2) {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}

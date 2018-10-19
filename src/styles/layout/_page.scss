@@ -1,0 +1,102 @@
+// ====================================================================
+// Page
+// ====================================================================
+
+.page {
+  min-height: 100%;
+}
+
+//
+// Header
+// ===========================================
+
+.page__header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 468px;
+  padding-top: 62px;
+
+  .page__title {
+    font-family: $font-arvo;
+    font-size: 1.8em;
+    letter-spacing: 2px;
+    line-height: 1.22;
+
+    @include tablet {
+      font-size: 2.6em;
+    }
+
+    @include desktop {
+      font-size: 3.4em;
+    }
+  }
+
+  .page__description {
+    margin-top: 1em;
+    line-height: 1.3;
+
+    @include tablet {
+      margin-top: .8em;
+      font-size: 1.4em;
+    }
+
+    @include desktop {
+      margin-top: .4em;
+      font-size: 1.8em;
+    }
+  }
+
+  .page__title,
+  .page__description {
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 3px 8px rgba($black, .3);
+  }
+
+  .page__banner {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($black, .4);
+    }
+  }
+}
+
+//
+// Content
+// ===========================================
+
+.page__content {
+  padding-top: 4em;
+
+  .page__heading {
+    margin-bottom: 1.25em;
+  }
+
+  ::selection {
+    color: $white;
+    background-color: $gray-800;
+  }
+
+  ::-moz-selection {
+    color: $white;
+    background-color: $gray-800;
+  }
+}

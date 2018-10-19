@@ -1,4 +1,8 @@
-_drafts
-_site
-.sass-cache
-.jekyll-metadata
+# Project dependencies
+.cache
+node_modules
+yarn-error.log
+
+# Build directory
+/public
+.DS_Store

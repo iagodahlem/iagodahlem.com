@@ -1,0 +1,21 @@
+// ====================================================================
+// Responsiviness
+// ====================================================================
+
+.u-hide {
+  display: none;
+
+  &--md {
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
+}
+
+.u-show {
+  &--md {
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+  }
+}
