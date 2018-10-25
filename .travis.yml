@@ -1,13 +1,11 @@
-language: ruby
-cache: bundler
-sudo: false
-rvm:
-  - 2.4.1
+language: node_js
+node_js:
+  - node
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
 
 script:
-  - bundle exec jekyll build
-  - bundle exec htmlproofer ./_site --only-4xx --check-favicon --check-html
-
-env:
-  global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+  - yarn build

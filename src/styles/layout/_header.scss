@@ -1,0 +1,70 @@
+// ====================================================================
+// Header
+// ====================================================================
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $header-z-index;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: $header-height;
+  padding: 0 $gutter;
+  background-color: transparent;
+  transition: all .3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .7);
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+}
+
+.header--backgroundVisible::after {
+  opacity: 1;
+}
+
+.header--up {
+  transform: translate3d(0, -100%, 0);
+}
+
+//
+// Title
+// ===========================================
+
+.header__title {
+  a {
+    padding: .2em;
+    color: $white;
+    font-family: $font-arvo;
+    font-size: 1em;
+    text-decoration: none;
+    transition: opacity .3s ease;
+    text-shadow: 0 3px 8px rgba($black,.3);
+  }
+
+  &:hover a {
+    opacity: .6;
+  }
+}
+
+//
+// Toggle
+// ===========================================
+
+.header__toggle {
+  width: $header-height;
+  height: 100%;
+  cursor: pointer;
+  margin-right: -#{$gutter};
+}
