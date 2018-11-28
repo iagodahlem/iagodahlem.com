@@ -1,8 +1,9 @@
 ---
 title: How to Organize Your styles with ITCSS
-description: A sane, scalable, managed CSS architecture
+description: A sane, scalable, managed CSS architecture.
 date: '2017-06-05'
 tags: []
+link: ''
 ---
 
 Everyone knows how CSS can be painful when not written properly. It is not an expressive language, it has a global scope, cascading rules (the source order really matters), inheritance, and selector specificity wars. The way CSS works makes it easy for bad code to take over. It is possible to use nested selectors to override existing rules, use __!important__ to quickly solve a styling problem, write CSS to undo other CSS, and so on.
