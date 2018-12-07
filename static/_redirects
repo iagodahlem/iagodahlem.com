@@ -2,4 +2,5 @@
 
 https://iagodahlem.netlify.com/* https://www.iagodahlem.com/:splat 301!
 
+/clonepen/* https://clonepen.iagodahlem.com/:splat 200
 /talks/* https://talks.iagodahlem.com/:splat 200
