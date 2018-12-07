@@ -1,3 +1,5 @@
 /home /
 
 https://iagodahlem.netlify.com/* https://www.iagodahlem.com/:splat 301!
+
+/talks/* https://talks.iagodahlem.com/:splat 200
