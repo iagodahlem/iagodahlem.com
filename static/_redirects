@@ -2,6 +2,7 @@
 
 https://iagodahlem.netlify.com/* https://www.iagodahlem.com/:splat 301!
 
+/calc/* https://calc.iagodahlem.com/:splat 200
 /clonepen/* https://clonepen.iagodahlem.com/:splat 200
 /knife-hit/* https://knife-hit.iagodahlem.com/:splat 200
 /stars-and-bombs/* https://stars-and-bombs.iagodahlem.com/:splat 200
