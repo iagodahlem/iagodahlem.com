@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import { graphql } from 'gatsby'
+import { Layout, Link } from '../components'
 
 const IndexPage = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
@@ -13,23 +13,26 @@ const IndexPage = ({ data }) => {
 
       {posts.map(({ node: post }) => {
         const { frontmatter, fields, excerpt } = post
+        const link = frontmatter.link
+          ? { as: 'a', href: frontmatter.link }
+          : { to: fields.slug }
 
         return (
           <div className='post-list' key={post.id}>
             <h3 className='post-list__title'>
-              <Link to={fields.slug}>
+              <Link {...link}>
                 {frontmatter.title}
               </Link>
             </h3>
 
             <p className='post-list__description'>
-              {excerpt}
+              {frontmatter.description || excerpt}
             </p>
 
             <div className='post-list__footer'>
               <p className='post-list__date'>{frontmatter.date}</p>
 
-              <Link className='post-list__link' to={fields.slug}>
+              <Link className='post-list__link' {...link}>
                 Read More
               </Link>
             </div>
@@ -53,7 +56,9 @@ export const query = graphql`
           id
           frontmatter {
             title
+            description
             date(formatString: "MMMM DD, YYYY")
+            link
           }
           fields {
             slug
