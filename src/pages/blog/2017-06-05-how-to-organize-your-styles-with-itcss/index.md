@@ -57,7 +57,7 @@ If you do not use a pre-processor, you can safely ignore these first two layers.
 
 ### Generic
 
-HHere you should have low-specificity styles which are meant to be applied all over the DOM. These include _box-sizing_, _resets_, _normalize_, etc.
+Here you should have low-specificity styles which are meant to be applied all over the DOM. These include _box-sizing_, _resets_, _normalize_, etc.
 
 This is the first layer where we can use pure CSS.
 
