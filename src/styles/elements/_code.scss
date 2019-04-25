@@ -2,25 +2,17 @@
 // Code
 // ====================================================================
 
-pre,
-code {
-  color: $gray-900;
+:not(pre) > code {
+  padding: 2px 5px;
   font-size: .9em;
-  border-radius: 3px;
-  background-color: $gray-100;
+  border-radius: 2px;
+  color: $white;
+  background-color: $gray-800;
 }
 
-code {
-  padding: 1px 5px;
-}
-
-pre {
-  padding: 8px 12px;
-  overflow-x: auto;
-
-  > code {
-    border: 0;
-    padding-right: 0;
-    padding-left: 0;
-  }
+pre[class*="language-"] {
+  font-size: .8em;
+  padding: 12px;
+  border-radius: 2px;
+  background-color: $gray-900;
 }
