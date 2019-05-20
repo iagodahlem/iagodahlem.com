@@ -26,12 +26,12 @@
 // ===========================================
 
 .post__content {
-  margin-bottom: 4em;
+  margin-bottom: 38px;
   font-family: $font-open-sans;
 
   h1, h2, h3, h4, h5, h6 {
     font-family: $font-montserrat;
-    font-weight: $weight-500;
+    font-weight: $weight-600;
     text-transform: uppercase;
   }
 
@@ -45,5 +45,14 @@
 
   ul > li:not(:last-child) {
     margin-bottom: .5em;
+  }
+}
+
+.post__footer {
+  margin-top: 38px;
+
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 43px;
   }
 }

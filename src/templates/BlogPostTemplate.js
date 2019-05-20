@@ -2,20 +2,23 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { BlogPost } from 'components'
 
-const BlogPostTemplate = ({ data }) => {
+const BlogPostTemplate = ({ data, pathContext, location }) => {
   const { markdownRemark } = data
   const { html, frontmatter } = markdownRemark
   const { title, description, date } = frontmatter
+  const { slug } = pathContext
+  const { href } = location
 
   const post = {
     title,
     description,
     date,
     html,
+    slug,
   }
 
   return (
-    <BlogPost post={post} />
+    <BlogPost post={post} href={href} />
   )
 }
 

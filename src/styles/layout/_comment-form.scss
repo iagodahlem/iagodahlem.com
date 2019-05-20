@@ -1,0 +1,22 @@
+// ====================================================================
+// Comment Form
+// ====================================================================
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-form__contact {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.comment-form__message {
+  margin-bottom: 20px;
+}
+
+.comment-form__footer {
+  display: flex;
+  justify-content: center;
+}

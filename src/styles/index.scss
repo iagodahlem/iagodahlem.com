@@ -19,16 +19,18 @@
 @import 'elements/page';
 @import 'elements/textarea';
 
+@import 'layout/comment-form';
 @import 'layout/footer';
 @import 'layout/grid';
-@import 'layout/icon';
 @import 'layout/header';
+@import 'layout/icon';
 @import 'layout/page';
 @import 'layout/post-list';
 @import 'layout/post';
 @import 'layout/wrapper';
 
 @import 'components/button';
+@import 'components/input';
 @import 'components/icon';
 @import 'components/menu';
 @import 'components/nav';
