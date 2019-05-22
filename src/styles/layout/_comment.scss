@@ -1,0 +1,38 @@
+// ====================================================================
+// Comment
+// ====================================================================
+
+.comment {
+  &:last-child {
+    margin-bottom: 48px;
+  }
+
+  & + & {
+    margin-top: 38px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
+  &__date {
+    font-family: $font-open-sans;
+    font-size: 15px;
+    font-weight: $weight-500;
+    color: $gray-500;
+  }
+
+  &__message {
+    font-family: $font-open-sans;
+    font-size: 14px;
+    color: $gray-800;
+  }
+}
