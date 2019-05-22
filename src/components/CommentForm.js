@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CommentForm = ({ slug, href }) => (
-  <>
+  <div>
     <h3>Leave a Comment</h3>
 
     <form
@@ -33,7 +33,7 @@ const CommentForm = ({ slug, href }) => (
         </button>
       </div>
     </form>
-  </>
+  </div>
 )
 
 export default CommentForm

@@ -5,18 +5,34 @@
 .comment-form {
   display: flex;
   flex-direction: column;
-}
 
-.comment-form__contact {
-  display: flex;
-  margin-bottom: 20px;
-}
+  &__contact {
+    display: flex;
+    flex-direction: column;
 
-.comment-form__message {
-  margin-bottom: 20px;
-}
+    @include mobile {
+      flex-direction: row;
+    }
 
-.comment-form__footer {
-  display: flex;
-  justify-content: center;
+    & .input {
+      margin-bottom: 20px;
+    }
+
+    & .input:last-child {
+      margin-left: 0;
+
+      @include mobile {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &__message {
+    margin-bottom: 20px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+  }
 }
