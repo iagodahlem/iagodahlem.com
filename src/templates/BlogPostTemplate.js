@@ -28,7 +28,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             <CommentList comments={allCommentsYaml} />
           )}
 
-          <CommentForm slug={slug} href={href} />
+          {/*<CommentForm slug={slug} href={href} />*/}
         </footer>
       </section>
     </Layout>
