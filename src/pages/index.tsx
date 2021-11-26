@@ -1,13 +1,13 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import { graphql } from 'gatsby'
+import { motion } from 'framer-motion'
+import { Link } from 'gatsby'
 import {
   Container,
   Box,
   Flex,
   Text,
   Heading,
-  Link,
   Nav,
   Section,
 } from '../components'

@@ -31,6 +31,11 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     min-height: 100vh;
   }
+
+  a {
+    color: ${themeGet('colors.black')};
+    text-decoration: none;
+  }
 `
 
 export default GlobalStyle

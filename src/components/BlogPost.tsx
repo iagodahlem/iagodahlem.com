@@ -25,14 +25,18 @@ const GlobalStyle = createGlobalStyle`
       font-size: ${themeGet('fontSizes.6')};
     }
 
-    p, pre {
+    p,
+    .gatsby-highlight pre {
       margin-top: ${themeGet('space.4')}px;
       margin-bottom: 0;
     }
     p {
       font-size: ${themeGet('fontSizes.5')};
       line-height: 1.5;
-      opacity: .75;
+      opacity: .7;
+    }
+    a {
+      opacity: 1;
     }
   }
 `
@@ -40,16 +44,14 @@ const GlobalStyle = createGlobalStyle`
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { markdownRemark } = data
   const { html, frontmatter } = markdownRemark
-  const { title, description, date } = frontmatter
-  // const { slug } = pageContext
-  // const { href } = location
+  const { title, date } = frontmatter
 
   return (
     <>
       <GlobalStyle />
 
       <Section>
-        <Container maxWidth='640px'>
+        <Container>
           <Flex as='header' flexDirection='column' alignItems='center' mb='5'>
             <Heading
               as='h2'
@@ -61,7 +63,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               {title}
             </Heading>
 
-            <Text fontSize='5' opacity='.75'>
+            <Text fontSize='5' opacity='.7'>
               {date}
             </Text>
           </Flex>

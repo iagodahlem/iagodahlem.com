@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'gatsby'
 import Box from './Box'
 import Flex from './Flex'
-import Link from './Link'
 import Button from './Button'
 import MenuItem from './MenuItem'
 

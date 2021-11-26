@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'gatsby'
 import Flex from './Flex'
 import Heading from './Heading'
-import Link from './Link'
 import Menu from './Menu'
 
 const Header = () => {

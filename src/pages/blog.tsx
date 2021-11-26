@@ -1,15 +1,8 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import { graphql } from 'gatsby'
-import {
-  Container,
-  Box,
-  Flex,
-  Text,
-  Heading,
-  Section,
-  Link,
-} from '../components'
+import { motion } from 'framer-motion'
+import { Link } from 'gatsby'
+import { Container, Box, Flex, Text, Heading, Section } from '../components'
 
 const ArticlesPage = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
@@ -28,13 +21,14 @@ const ArticlesPage = ({ data }) => {
 
         {posts.map(({ node: post }) => {
           const { frontmatter, fields, excerpt } = post
+          const A = frontmatter.link ? 'a' : Link
           const link = frontmatter.link
-            ? { as: 'a', href: frontmatter.link }
+            ? { href: frontmatter.link }
             : { to: fields.slug }
 
           return (
             <Box key={post.id} width={1}>
-              <Link {...link}>
+              <A {...link}>
                 <Flex
                   as={motion.div}
                   flexDirection={['column', 'column', 'row']}
@@ -58,7 +52,7 @@ const ArticlesPage = ({ data }) => {
                     {frontmatter.date}
                   </Text>
                 </Flex>
-              </Link>
+              </A>
             </Box>
           )
         })}
