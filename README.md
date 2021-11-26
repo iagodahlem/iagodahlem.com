@@ -1,4 +1,4 @@
-# iagodahlem.github.io
+# iagodahlem.com
 
 :earth_americas: My personal website.
 
