@@ -35,8 +35,8 @@ const Articles = ({ posts }) => {
               mt={[3, 3, 0]}
               fontSize='5'
               fontWeight='2'
+              color='gray.300'
               textAlign='right'
-              opacity='0.7'
             >
               {frontmatter.date}
             </Text>
