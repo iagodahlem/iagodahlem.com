@@ -25,21 +25,22 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  const BlogPostTemplate = path.resolve('./src/templates/BlogPostTemplate.js')
+  const BlogPostTemplate = path.resolve('./src/components/BlogPost.tsx')
 
   return new Promise((resolve, reject) => {
-    graphql(`{
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
+    graphql(`
+      {
+        allMarkdownRemark {
+          edges {
+            node {
+              fields {
+                slug
+              }
             }
           }
         }
       }
-    }`)
-    .then(({ data, errors }) => {
+    `).then(({ data, errors }) => {
       if (errors) {
         return reject(errors)
       }
@@ -49,7 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
           path: node.fields.slug,
           component: BlogPostTemplate,
           context: {
-            slug: node.fields.slug
+            slug: node.fields.slug,
           },
         })
       })

@@ -1,2 +1,1 @@
-import 'prismjs/themes/prism-okaidia.css'
-import './src/styles/index.scss'
+require('dracula-prism/dist/css/dracula-prism.min.css')

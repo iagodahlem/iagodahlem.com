@@ -1,5 +1,5 @@
 ---
-title: How to Organize Your styles with ITCSS
+title: How to Organize your Styles with ITCSS
 description: A sane, scalable, managed CSS architecture.
 date: '2017-06-05'
 tags: []
