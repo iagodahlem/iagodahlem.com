@@ -8,6 +8,7 @@ import Link from './Link'
 import Nav from './Nav'
 import Section from './Section'
 import Text from './Text'
+import Articles from './Articles'
 
 export {
   Box,
@@ -20,4 +21,5 @@ export {
   Link,
   Nav,
   Section,
+  Articles,
 }

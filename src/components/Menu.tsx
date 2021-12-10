@@ -1,16 +1,16 @@
 import React, { FC } from 'react'
-import { motion } from 'framer-motion'
 import { Link } from 'gatsby'
+import { motion } from 'framer-motion'
+import css from '@styled-system/css'
 import Box from './Box'
 import Flex from './Flex'
 import Button from './Button'
-import MenuItem from './MenuItem'
+import Text from './Text'
 
-type Props = {
-  isOpen: boolean
-  open: () => void
-  close: () => void
-  toggle: () => void
+const routes = {
+  '/about': 'About',
+  '/blog': 'Articles',
+  '/talks': 'Talks',
 }
 
 const variants = {
@@ -20,6 +20,13 @@ const variants = {
   closed: {
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
+}
+
+type Props = {
+  isOpen: boolean
+  open: () => void
+  close: () => void
+  toggle: () => void
 }
 
 const Menu: FC<Props> = ({ isOpen, open, close, toggle }) => (
@@ -52,15 +59,37 @@ const Menu: FC<Props> = ({ isOpen, open, close, toggle }) => (
         p='0'
         variants={variants}
       >
-        <MenuItem>
-          <Link to='/about'>About</Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to='/blog'>Articles</Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to='/talks'>Talks</Link>
-        </MenuItem>
+        {Object.entries(routes).map(([route, label]) => (
+          <Text
+            key={route}
+            as={motion.li}
+            py='2'
+            fontFamily='heading'
+            fontSize='6'
+            fontWeight='4'
+            css={css({ listStyle: 'none' })}
+            variants={{
+              open: {
+                x: 0,
+                opacity: 1,
+                transition: {
+                  y: { stiffness: 1000, velocity: -100 },
+                },
+              },
+              closed: {
+                x: 50,
+                opacity: 0,
+                transition: {
+                  y: { stiffness: 1000 },
+                },
+              },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link to={route}>{label}</Link>
+          </Text>
+        ))}
       </Flex>
     </Box>
   </Box>

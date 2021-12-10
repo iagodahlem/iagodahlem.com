@@ -1,15 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { motion } from 'framer-motion'
-import { Link } from 'gatsby'
 import {
   Container,
-  Box,
   Flex,
   Text,
   Heading,
   Nav,
   Section,
+  Articles,
 } from '../components'
 
 const IndexPage = ({ data }) => {
@@ -56,42 +54,7 @@ const IndexPage = ({ data }) => {
             Latest Articles
           </Heading>
 
-          {posts.map(({ node: post }) => {
-            const { frontmatter, fields } = post
-            const link = frontmatter.link
-              ? { as: 'a', href: frontmatter.link }
-              : { to: fields.slug }
-
-            return (
-              <Box key={post.id} width={1}>
-                <Link {...link}>
-                  <Flex
-                    as={motion.div}
-                    flexDirection={['column', 'column', 'row']}
-                    justifyContent='space-between'
-                    alignItems={['flex-start', 'flex-start', 'center']}
-                    py='4'
-                    whileHover={{
-                      opacity: 0.6,
-                    }}
-                  >
-                    <Heading as='h3' fontSize='6' fontWeight='3'>
-                      {frontmatter.title}
-                    </Heading>
-
-                    <Text
-                      fontSize='5'
-                      fontWeight='2'
-                      mt={[3, 3, 0]}
-                      opacity='0.7'
-                    >
-                      {frontmatter.date}
-                    </Text>
-                  </Flex>
-                </Link>
-              </Box>
-            )
-          })}
+          <Articles posts={posts} />
         </Container>
       </Section>
     </>

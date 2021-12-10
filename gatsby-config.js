@@ -4,8 +4,6 @@ module.exports = {
     description: "I'm a Front-end Developer working at Codeminer42.",
     author: 'Iago Dahlem Lorensini',
     email: 'iagodahlemlorensini@gmail.com',
-    image:
-      'https://res.cloudinary.com/iagodahlem/image/upload/c_scale,f_auto,q_auto,w_1600/v1524673942/iagodahlem.github.io/index.jpg',
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -48,12 +46,12 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          // {
-          //   resolve: 'gatsby-remark-images',
-          //   options: {
-          //     maxWidth: 740,
-          //   },
-          // },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 740,
+            },
+          },
           {
             resolve: 'gatsby-remark-prismjs',
             options: {},

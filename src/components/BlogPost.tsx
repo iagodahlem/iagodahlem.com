@@ -11,10 +11,6 @@ import Heading from './Heading'
 
 const GlobalStyle = createGlobalStyle`
   .BlogPost {
-    h1,h2,h3,h4,h5,h6 {
-      margin-top: ${themeGet('space.5')}px;
-      margin-bottom: 0;
-    }
     h1 {
       font-size: ${themeGet('fontSizes.8')}px;
     }
@@ -25,18 +21,21 @@ const GlobalStyle = createGlobalStyle`
       font-size: ${themeGet('fontSizes.6')};
     }
 
-    p,
+    p,ul,li,ol,blockquote,pre,table,th,td,tr,dl,dt,dd,form,fieldset,legend,address {
+      font-size: ${themeGet('fontSizes.5')};
+      line-height: 1.5;
+      color: ${themeGet('colors.gray.200')};
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+      margin-top: ${themeGet('space.5')}px;
+      margin-bottom: 0;
+    }
+
+    p, ul, ol, blockquote, table, dl, dt, dd,
     .gatsby-highlight pre {
       margin-top: ${themeGet('space.4')}px;
       margin-bottom: 0;
-    }
-    p {
-      font-size: ${themeGet('fontSizes.5')};
-      line-height: 1.5;
-      opacity: .7;
-    }
-    a {
-      opacity: 1;
     }
   }
 `
@@ -63,7 +62,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               {title}
             </Heading>
 
-            <Text fontSize='5' opacity='.7'>
+            <Text fontSize='5' color='gray.300'>
               {date}
             </Text>
           </Flex>
