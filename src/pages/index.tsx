@@ -1,13 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import {
+  Articles,
   Container,
   Flex,
-  Text,
   Heading,
   Nav,
   Section,
-  Articles,
+  Seo,
+  Text,
 } from '../components'
 
 const IndexPage = ({ data }) => {
@@ -15,6 +16,8 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
+      <Seo title='Home' />
+
       <Section>
         <Container
           as={Flex}

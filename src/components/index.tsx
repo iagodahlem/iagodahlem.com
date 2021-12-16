@@ -9,6 +9,7 @@ import Nav from './Nav'
 import Section from './Section'
 import Text from './Text'
 import Articles from './Articles'
+import Seo from './Seo'
 
 export {
   Box,
@@ -22,4 +23,5 @@ export {
   Nav,
   Section,
   Articles,
+  Seo,
 }

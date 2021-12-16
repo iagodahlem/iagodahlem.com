@@ -1,25 +1,29 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Container, Flex, Heading, Section, Articles } from '../components'
+import { Container, Flex, Heading, Section, Articles, Seo } from '../components'
 
 const ArticlesPage = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
 
   return (
-    <Section>
-      <Container
-        as={Flex}
-        flexDirection='column'
-        justifyContent='center'
-        alignItems='flex-start'
-      >
-        <Heading as='h2' fontFamily='heading' fontSize='7' mb='5'>
-          All Articles
-        </Heading>
+    <>
+      <Seo title='Articles' />
 
-        <Articles posts={posts} />
-      </Container>
-    </Section>
+      <Section>
+        <Container
+          as={Flex}
+          flexDirection='column'
+          justifyContent='center'
+          alignItems='flex-start'
+        >
+          <Heading as='h2' fontFamily='heading' fontSize='7' mb='5'>
+            All Articles
+          </Heading>
+
+          <Articles posts={posts} />
+        </Container>
+      </Section>
+    </>
   )
 }
 

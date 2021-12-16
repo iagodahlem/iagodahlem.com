@@ -1,9 +1,18 @@
 module.exports = {
   siteMetadata: {
     title: 'Iago Dahlem Lorensini',
-    description: "I'm a Front-end Developer working at Codeminer42.",
-    author: 'Iago Dahlem Lorensini',
-    email: 'iagodahlemlorensini@gmail.com',
+    description: ``,
+    canonicalUrl: 'https://iagodahlem.com',
+    author: {
+      name: 'Iago Dahlem Lorensini',
+      email: 'iagodahlemlorensini@gmail.com',
+    },
+    social: {
+      github: '@iagodahlem',
+      linkedin: '',
+      twitter: '@iagodahlem',
+      instagram: '',
+    },
   },
   plugins: [
     'gatsby-plugin-styled-components',

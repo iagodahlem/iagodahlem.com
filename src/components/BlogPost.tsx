@@ -8,6 +8,7 @@ import Section from './Section'
 import Container from './Container'
 import Text from './Text'
 import Heading from './Heading'
+import Seo from './Seo'
 
 const GlobalStyle = createGlobalStyle`
   .BlogPost {
@@ -43,11 +44,13 @@ const GlobalStyle = createGlobalStyle`
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { markdownRemark } = data
   const { html, frontmatter } = markdownRemark
-  const { title, date } = frontmatter
+  const { title, description, date } = frontmatter
 
   return (
     <>
       <GlobalStyle />
+
+      <Seo title={title} description={description} />
 
       <Section>
         <Container>
