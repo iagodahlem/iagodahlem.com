@@ -77,5 +77,11 @@ module.exports = {
         name: 'comments',
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ['UA-84438304-1'],
+      },
+    },
   ],
 }
