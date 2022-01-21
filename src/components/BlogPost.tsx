@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
 
     p,ul,li,ol,blockquote,pre,table,th,td,tr,dl,dt,dd,form,fieldset,legend,address {
       font-size: ${themeGet('fontSizes.5')};
-      line-height: 1.5;
+      line-height: 3.2rem;
       color: ${themeGet('colors.gray.200')};
     }
 
