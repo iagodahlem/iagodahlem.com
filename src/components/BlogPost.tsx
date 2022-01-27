@@ -38,6 +38,12 @@ const GlobalStyle = createGlobalStyle`
       margin-top: ${themeGet('space.4')}px;
       margin-bottom: 0;
     }
+
+    blockquote {
+      margin-right: ${themeGet('space.4')}px;
+      margin-left: ${themeGet('space.4')}px;
+      font-style: italic;
+    }
   }
 `
 
