@@ -26,10 +26,10 @@ const talks = [
   },
 ]
 
-const TalksPage = () => {
+const TalksPage = (props) => {
   return (
     <>
-      <Seo title='Talks' />
+      <Seo title='Talks' pathname={props.location.pathname} />
 
       <Section>
         <Container

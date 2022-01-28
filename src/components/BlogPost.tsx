@@ -56,7 +56,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     <>
       <GlobalStyle />
 
-      <Seo title={title} description={description} />
+      <Seo
+        title={title}
+        description={description}
+        pathname={location.pathname}
+      />
 
       <Section>
         <Container>

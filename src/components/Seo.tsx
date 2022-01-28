@@ -6,9 +6,15 @@ type Props = {
   title?: string
   description?: string
   lang?: string
+  pathname?: string
 }
 
-const Seo: FC<Props> = ({ title = '', description = '', lang = 'en' }) => {
+const Seo: FC<Props> = ({
+  title = '',
+  description = '',
+  lang = 'en',
+  pathname = '',
+}) => {
   const {
     site: { siteMetadata },
   } = useStaticQuery(
@@ -18,7 +24,7 @@ const Seo: FC<Props> = ({ title = '', description = '', lang = 'en' }) => {
           siteMetadata {
             title
             description
-            canonicalUrl
+            siteUrl
             author {
               name
             }
@@ -37,6 +43,9 @@ const Seo: FC<Props> = ({ title = '', description = '', lang = 'en' }) => {
   const seo = {
     title: title || siteMetadata.title,
     description,
+    canonicalUrl: pathname
+      ? `${siteMetadata.siteUrl}${pathname.replace(/\/$/, '')}`
+      : siteMetadata.siteUrl,
     ...siteMetadata,
   }
 
@@ -49,7 +58,7 @@ const Seo: FC<Props> = ({ title = '', description = '', lang = 'en' }) => {
       titleTemplate={`%s / ${siteMetadata.title}`}
     >
       <meta name='description' content={seo.description} />
-      <link rel='canonical' href={seo.canonicalUrl} />
+      {seo.canonicalUrl && <link rel='canonical' href={seo.canonicalUrl} />}
       {seo.image && <meta name='image' content={seo.image} />}
 
       <meta property='og:url' content={seo.url} />

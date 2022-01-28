@@ -12,7 +12,7 @@ const Articles = ({ posts }) => {
     const A = frontmatter.link ? 'a' : Link
     const link = frontmatter.link
       ? { href: frontmatter.link }
-      : { to: fields.slug }
+      : { to: fields.slug.replace(/\/$/, '') }
 
     return (
       <Box key={post.id} width={1}>

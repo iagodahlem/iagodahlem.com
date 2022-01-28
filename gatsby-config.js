@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: 'Iago Dahlem Lorensini',
-    description: ``,
-    canonicalUrl: 'https://iagodahlem.com',
+    description:
+      "Hey there! I'm Iago. A software engineer working at Codeminer42",
+    siteUrl: 'https://iagodahlem.com',
     author: {
       name: 'Iago Dahlem Lorensini',
       email: 'iagodahlemlorensini@gmail.com',

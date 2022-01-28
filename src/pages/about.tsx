@@ -63,10 +63,14 @@ const jobs = [
   },
 ]
 
-const AboutPage = () => {
+const AboutPage = (props) => {
   return (
     <>
-      <Seo title='About' />
+      <Seo
+        title='About'
+        description='About Me'
+        pathname={props.location.pathname}
+      />
 
       <Section>
         <Container
