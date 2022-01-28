@@ -1,10 +1,10 @@
 import React from 'react'
 import { Container, Flex, Text, Heading, Section, Seo } from '../components'
 
-const TalksPage = () => {
+const TalksPage = (props) => {
   return (
     <>
-      <Seo title='Talks' />
+      <Seo title='Talks' pathname={props.location.pathname} />
 
       <Section>
         <Container

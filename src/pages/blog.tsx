@@ -2,12 +2,16 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Container, Flex, Heading, Section, Articles, Seo } from '../components'
 
-const ArticlesPage = ({ data }) => {
+const ArticlesPage = ({ data, ...props }) => {
   const { edges: posts } = data.allMarkdownRemark
 
   return (
     <>
-      <Seo title='Articles' />
+      <Seo
+        title='Articles'
+        description='All Articles'
+        pathname={props.location.pathname}
+      />
 
       <Section>
         <Container

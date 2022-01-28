@@ -1,9 +1,13 @@
 import React from 'react'
 import { Text, Section, Container, Flex, Heading, Seo } from '../components'
 
-const NotFoundPage = () => (
+const NotFoundPage = (props) => (
   <>
-    <Seo title='Page not Found' />
+    <Seo
+      title='Page not Found'
+      description="This route doesn't exist."
+      pathname={props.location.pathname}
+    />
 
     <Section>
       <Container
