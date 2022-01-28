@@ -20,7 +20,7 @@ const ArticlesPage = ({ data, ...props }) => {
           justifyContent='center'
           alignItems='flex-start'
         >
-          <Heading as='h2' fontFamily='heading' fontSize='7' mb='5'>
+          <Heading as='h2' fontFamily='heading' fontSize='8' mb='5'>
             All Articles
           </Heading>
 
