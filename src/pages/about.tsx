@@ -24,10 +24,26 @@ const jobs = [
   {
     jobTitle: 'Software Engineer',
     jobType: 'Contractor',
+    companyName: 'StackCommerce',
+    companyUrl: 'https://www.stackcommerce.com',
+    startDate: new Date('May, 2022'),
+    endDate: null,
+  },
+  {
+    jobTitle: 'Software Engineer',
+    jobType: 'Contractor',
+    companyName: '9Count',
+    companyUrl: 'https://9count.co',
+    startDate: new Date('Feb, 2022'),
+    endDate: new Date('May, 2022'),
+  },
+  {
+    jobTitle: 'Software Engineer',
+    jobType: 'Contractor',
     companyName: 'LiftForward',
     companyUrl: 'https://liftforward.com',
     startDate: new Date('October, 2021'),
-    endDate: null,
+    endDate: new Date('Feb, 2022'),
   },
   {
     jobTitle: 'Software Engineer',
@@ -48,7 +64,7 @@ const jobs = [
   {
     jobTitle: 'Front-End Engineer',
     jobType: 'Contractor',
-    companyName: 'GoDaddy',
+    companyName: 'Folha de S.Paulo',
     companyUrl: 'https://folha.uol.com.br',
     startDate: new Date('July, 2017'),
     endDate: new Date('December, 2017'),
@@ -88,8 +104,8 @@ const AboutPage = (props) => {
               Hey there! 👋, I'm Iago. A software engineer from Brazil. I'm
               currently working at Codeminer42 as a consultant fullstack
               engineer, where I attended companies like F. de São Paulo,
-              GoDaddy, Edlio and currently LiftForward. I work mainly with
-              React, Node and Ruby.
+              GoDaddy, Edlio, LiftForward, 9Count and currently StackCommerce. I
+              work mainly with React, Node and Ruby.
             </Text>
 
             <Text lineHeight='3.2rem' mt='4'>
@@ -138,19 +154,18 @@ const AboutPage = (props) => {
                   key={`${job.jobTitle}-${job.companyName}`}
                   css={css({ ':not(:last-child)': { mb: '4' } })}
                 >
-                  <Text fontWeight='600' lineHeight='3.2rem'>
-                    {job.jobTitle}
+                  <Text
+                    as={motion.a}
+                    href={job.companyUrl}
+                    whileHover={{ opacity: 0.6 }}
+                    fontWeight='600'
+                    lineHeight='3.2rem'
+                  >
+                    {job.companyName}
                   </Text>
 
                   <Text lineHeight='3.2rem'>
-                    <Text
-                      as={motion.a}
-                      href={job.companyUrl}
-                      whileHover={{ opacity: 0.6 }}
-                    >
-                      {job.companyName}
-                    </Text>{' '}
-                    •{' '}
+                    {job.jobTitle} •{' '}
                     <Text as='span' color='gray.300'>
                       {job.jobType}
                     </Text>
