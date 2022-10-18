@@ -23,6 +23,15 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions
+
+  if (page.path.match(/resume/)) {
+    page.context.layout = 'printer'
+    createPage(page)
+  }
+}
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const BlogPostTemplate = path.resolve('./src/components/BlogPost.tsx')

@@ -2,14 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
-import GlobalStyle from './GlobalStyle'
-import Box from './Box'
-import Flex from './Flex'
-import Header from './Header'
-import Nav from './Nav'
+import GlobalStyle from '../components/GlobalStyle'
+import PrinterLayout from './PrinterLayout'
+import SiteLayout from './SiteLayout'
 import theme from '../theme'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, pageContext }) => {
   return (
     <ThemeProvider theme={theme}>
       <Helmet>
@@ -21,15 +19,11 @@ const Layout = ({ children }) => {
 
       <GlobalStyle />
 
-      <Header />
-
-      <Box as='main' flex='1' mt='header'>
-        {children}
-      </Box>
-
-      <Flex as='footer' justifyContent='center' px='4' py='4'>
-        <Nav />
-      </Flex>
+      {pageContext?.layout === 'printer' ? (
+        <PrinterLayout>{children}</PrinterLayout>
+      ) : (
+        <SiteLayout>{children}</SiteLayout>
+      )}
     </ThemeProvider>
   )
 }
