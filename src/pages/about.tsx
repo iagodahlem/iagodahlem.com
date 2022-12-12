@@ -16,10 +16,18 @@ const jobs = [
   {
     jobTitle: 'Software Engineer',
     jobType: 'Full-time',
+    companyName: 'StickerMule',
+    companyUrl: 'https://StickerMule.com',
+    startDate: new Date('Dec, 05, 2022'),
+    endDate: null,
+  },
+  {
+    jobTitle: 'Software Engineer',
+    jobType: 'Full-time',
     companyName: 'Codeminer42',
     companyUrl: 'https://codeminer42.com',
     startDate: new Date('May, 2017'),
-    endDate: null,
+    endDate: new Date('Dec, 02, 2022'),
   },
   {
     jobTitle: 'Software Engineer',
@@ -27,7 +35,7 @@ const jobs = [
     companyName: 'StackCommerce',
     companyUrl: 'https://www.stackcommerce.com',
     startDate: new Date('May, 2022'),
-    endDate: null,
+    endDate: new Date('Dec, 2022'),
   },
   {
     jobTitle: 'Software Engineer',
@@ -102,10 +110,11 @@ const AboutPage = (props) => {
           <Box color='gray.200'>
             <Text lineHeight='3.2rem'>
               Hey there! 👋, I'm Iago. A software engineer from Brazil. I'm
-              currently working at Codeminer42 as a consultant fullstack
-              engineer, where I attended companies like F. de São Paulo,
-              GoDaddy, Edlio, LiftForward, 9Count and currently StackCommerce. I
-              work mainly with React, Node and Ruby.
+              currently working at StickerMule as a fullstack software engineer,
+              previously I was at Codeminer42 working as a consultant where I
+              attended companies like F. de São Paulo, GoDaddy, Edlio,
+              LiftForward, 9Count and StackCommerce. I work mainly with React,
+              Node and Ruby.
             </Text>
 
             <Text lineHeight='3.2rem' mt='4'>
@@ -115,10 +124,8 @@ const AboutPage = (props) => {
             </Text>
 
             <Text lineHeight='3.2rem' mt='4'>
-              I like to mentorship new developers starting their careers sharing
-              my knowledge, work with open source software and study good
-              practices and architectures to improve software scalability and
-              maintainability.
+              I like to study good practices and architectures to improve
+              software scalability and maintainability.
             </Text>
 
             <Text lineHeight='3.2rem' mt='4'>
@@ -145,8 +152,12 @@ const AboutPage = (props) => {
                 end: job.endDate ?? new Date(),
               })
 
+              const durationFormat = durationObj.months
+                ? ['years', 'months']
+                : ['days']
+
               const duration = formatDuration(durationObj, {
-                format: ['years', 'months'],
+                format: durationFormat,
               })
 
               return (

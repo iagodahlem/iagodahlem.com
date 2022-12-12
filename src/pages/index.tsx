@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { motion } from 'framer-motion'
 import {
   Articles,
   Container,
@@ -39,7 +40,14 @@ const IndexPage = ({ data }) => {
             Hi! 👋 I'm Iago.
             <br />A software engineer from Brazil.
             <br />
-            I'm currently working at Codeminer42.
+            I'm currently working at{' '}
+            <Text
+              as={motion.a}
+              href='https://stickermule.com'
+              whileHover={{ opacity: 0.6 }}
+            >
+              StickerMule
+            </Text>
           </Text>
 
           <Nav />
