@@ -43,10 +43,10 @@ const IndexPage = ({ data }) => {
             I'm currently working at{' '}
             <Text
               as={motion.a}
-              href='https://stickermule.com'
+              href='https://clerk.com'
               whileHover={{ opacity: 0.6 }}
             >
-              StickerMule
+              Clerk.com
             </Text>
           </Text>
 

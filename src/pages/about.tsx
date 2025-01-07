@@ -14,12 +14,20 @@ import {
 
 const jobs = [
   {
+    jobTitle: 'Senior Software Engineer',
+    jobType: 'Full-time',
+    companyName: 'Clerk.com',
+    companyUrl: 'https://clerk.com',
+    startDate: new Date('Jan, 07, 2025'),
+    endDate: null,
+  },
+  {
     jobTitle: 'Software Engineer',
     jobType: 'Full-time',
     companyName: 'StickerMule',
-    companyUrl: 'https://StickerMule.com',
+    companyUrl: 'https://stickermule.com',
     startDate: new Date('Dec, 05, 2022'),
-    endDate: null,
+    endDate: new Date('Jan, 03, 2025'),
   },
   {
     jobTitle: 'Software Engineer',
@@ -110,17 +118,13 @@ const AboutPage = (props) => {
           <Box color='gray.200'>
             <Text lineHeight='3.2rem'>
               Hey there! 👋, I'm Iago. A software engineer from Brazil. I'm
-              currently working at StickerMule as a fullstack software engineer,
-              previously I was at Codeminer42 working as a consultant where I
-              attended companies like F. de São Paulo, GoDaddy, Edlio,
-              LiftForward, 9Count and StackCommerce. I work mainly with React,
-              Node and Ruby.
+              currently working at Clerk.com.
             </Text>
 
             <Text lineHeight='3.2rem' mt='4'>
-              I'm currently living in Florianópolis, with my lovely wife 👩, our
-              crazy dog Helga 🐶, and we recently had a insanely beautiful
-              daughter called Ramona 👶.
+              I live in Florianópolis with my lovely wife 👩, our crazy dog
+              Helga 🐶, and we recently had a insanely beautiful daughter called
+              Ramona 👶.
             </Text>
 
             <Text lineHeight='3.2rem' mt='4'>
