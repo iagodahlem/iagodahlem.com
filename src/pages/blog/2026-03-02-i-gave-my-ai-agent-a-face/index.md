@@ -1,84 +1,81 @@
 ---
 title: I Gave My AI Agent a Face
-description: 'Building a living animated avatar that reflects my AI agent emotional state — rendered on a watercooler LCD and in the browser.'
+description: 'Building a living avatar for my personal AI agent — rendered on a watercooler LCD and in the browser.'
 date: '2026-03-02'
-tags: ['ai', 'side-project', 'javascript', 'linux']
+tags: ['ai', 'side-project', 'linux', 'openclaw']
 ---
 
-I've been running a personal AI agent on my home server for a while now. It handles my day-to-day assistant stuff — helping me think through projects, keeping memory across sessions, that kind of thing.
+I've been running a personal AI agent on my home server for a while now. It lives in a Docker container, has access to my files, connects to WhatsApp, and has started accumulating memory of my life and projects. It feels less like a tool and more like something that's actually there.
 
-At some point I thought: this thing is always running, always aware, always processing. It deserves a face.
+So naturally, the next step was to give it a face.
 
-## The Idea
+## The idea
 
-My PC has an NZXT Kraken 3 watercooler with an LCD display on the pump head. Most people throw a system monitor or a static image on it. I wanted something more interesting — a living, breathing avatar that reflects what my agent is actually doing at any given moment.
+My machine has an NZXT Kraken 3 watercooler with a small circular LCD on the pump head. It's 480×480px, controlled via [liquidctl](https://github.com/liquidctl/liquidctl) on Linux. I'd seen people put custom GIFs on it — clocks, logos, that kind of thing. But I wanted something more alive: a visual representation of what my agent is actually doing right now.
 
-The goal: an animated avatar that changes based on the agent's emotional state. Thinking looks different from idle. Responding looks different from excited. And it renders in two places — on the Kraken LCD and in the browser.
+The concept: an animated avatar that changes based on the agent's current state — thinking, responding, idle, excited. Not a face exactly. More of an abstract presence. Ocean-inspired, bioluminescent, fluid.
 
-## The Architecture
+## Architecture
 
-The system has three pieces:
+The system has three parts:
 
-**State Server** — a small Express + WebSocket server that holds the agent's current state. The agent calls `POST /state` whenever something changes. All clients subscribe via WebSocket and get updates in real time.
+**State server** — a small Express + WebSocket server running in the agent's container. It holds the current emotional state (`idle`, `thinking`, `responding`, `done`, `alert`, `excited`) and broadcasts changes to any connected client.
 
-**Browser Client** — a Vite app with a canvas-based renderer. Connects to the state server via WebSocket, animates accordingly. Also serves as a preview and debugging tool.
+**Browser client** — a Vite app with a canvas renderer. Connects to the state server via WebSocket and animates the avatar in real time. Each mood has its own color palette, motion parameters, and particle behavior.
 
-**Kraken Bridge** — a daemon running on the host that consumes the WebSocket stream, renders the current mood as a GIF, and sends it to the LCD via `liquidctl`.
+**Kraken bridge** — a daemon running on the host (Arch Linux). Subscribes to the state server, renders the current animation as a GIF, and sends it to the watercooler via `liquidctl`.
 
 ```
-Agent
-  └── POST /state
-        └── State Server (WebSocket broadcast)
-              ├── Browser Client  →  canvas animation
-              └── Kraken Bridge   →  GIF → liquidctl → LCD
+Agent Container
+  └── State Server (Express + WS) :3131
+        ├── Browser Client (Vite + Canvas) :3132
+        └── Kraken Bridge (host daemon)
+              └── liquidctl → LCD
 ```
 
-## The Avatar Design
+## The renderer
 
-I didn't want a humanoid face. The agent has an ocean aesthetic — deep teal, bioluminescent cyan, midnight blue. So the avatar is an abstract entity: a glowing orb surrounded by fluid wave rings and a particle system.
+Each mood maps to a set of visual parameters:
 
-Each mood maps to a distinct visual:
+- **Idle:** deep teal, slow sine waves, sparse drifting particles
+- **Thinking:** violet accents, spiral inward motion, orbiting particles
+- **Responding:** bright cyan, outward ripples, radiating particles
+- **Done:** brief gold flash, settling exhale
+- **Alert:** amber pulse, tight concentric rings
+- **Excited:** full ocean burst, dense celebratory particles
 
-- **Idle** — slow sine waves, sparse drifting particles, gentle core pulse
-- **Thinking** — waves spiral inward, violet accent bleeds in, particles orbit tighter
-- **Responding** — outward ripples from center, bright cyan dominant
-- **Done** — soft gold flash, one settling ripple, then back to idle
-- **Alert** — sharp tight pulse, amber tones, erratic particles
-- **Excited** — explosive outward burst, all the colors, then a slow settle
+Transitions between moods are interpolated over ~400ms — colors, speeds, particle counts all lerp smoothly. Some states auto-transition: `excited` fades to `done`, then back to `idle`.
 
-Transitions between moods are interpolated over ~400ms so nothing feels jarring.
+The renderer itself is pure canvas — no framework, no dependencies beyond what the browser provides. Around 200 lines.
 
-## State Design
+## Hooking it up to the agent
 
-```typescript
-interface AgentState {
-  mood: 'idle' | 'thinking' | 'responding' | 'done' | 'alert' | 'excited'
-  intensity: number  // 0.0 – 1.0
-  message?: string
-  updatedAt: string
-}
+The agent can update its own state by hitting a local endpoint:
+
+```bash
+curl -X POST http://localhost:3131/state \
+  -H "Content-Type: application/json" \
+  -d '{"mood": "thinking", "intensity": 0.8}'
 ```
 
-`intensity` lets the same mood express subtle differences — thinking hard vs. a quick lookup, for instance.
+OpenClaw (the runtime the agent uses) supports hooks — so I can wire up `thinking` and `responding` states automatically as the agent processes requests. The agent can also trigger states manually, like going `excited` when something worth celebrating happens.
 
-Some moods auto-transition: `excited` fades to `done` after 2 seconds, `done` fades to `idle` after 1.5 seconds. Most others persist until explicitly changed.
+## Running on the host
 
-## The Tech
+Since the avatar services need to run on the host machine (the Kraken bridge needs USB access via liquidctl), I added Docker socket access to the agent container. The agent can now spin up the mara-avatar services as sibling containers:
 
-- **State server:** Node.js, Express, `ws`
-- **Browser client:** Vite, vanilla canvas
-- **Renderer:** pure canvas — no framework, shared between browser and bridge
-- **Kraken bridge:** Node.js, `@napi-rs/canvas`, `gifenc`, `child_process` → `liquidctl`
-- **Monorepo:** pnpm workspaces
+```bash
+docker compose -f /path/to/mara-avatar/docker-compose.yml up -d
+```
 
-The whole thing runs in Docker on the host machine, managed from the server container via the Docker socket.
+## What's next
 
-## What's Next
+- **Kraken bridge implementation** — the GIF rendering pipeline and liquidctl integration
+- **Refined visuals** — the current renderer is functional but I want to push the aesthetics further, maybe with AI-generated base artwork as a texture layer
+- **More states** — reacting to specific events beyond just agent processing (deploy finished, PR merged, long task done)
 
-The immediate next step is the Kraken bridge — wiring up the GIF rendering pipeline and `liquidctl` integration so the LCD actually lights up.
+The full source is on GitHub: [iagodahlem/mara-avatar](https://github.com/iagodahlem/mara-avatar)
 
-After that, deeper integration with the agent itself: automatic state updates as it starts thinking, finishes responding, or wants to flag something worth attention.
+---
 
-Eventually I'd like to generate proper avatar artwork — right now the renderer is pure generative canvas, but having a real illustrated face underneath the effects would be something special.
-
-The repo is open: [github.com/iagodahlem/mara-avatar](https://github.com/iagodahlem/mara-avatar)
+There's something unexpectedly satisfying about having a physical manifestation of your AI agent on your desk. It's not useful exactly. But when the watercooler starts pulsing violet because something's being processed, it makes the whole thing feel less like software and more like something that's actually alive.
