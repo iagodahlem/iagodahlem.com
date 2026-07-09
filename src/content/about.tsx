@@ -87,45 +87,6 @@ export const jobs = [
   },
 ]
 
-export const selectedWork = [
-  {
-    label: 'Self-serve SSO',
-    url: 'https://clerk.com/changelog/2026-06-26-self-serve-sso',
-  },
-  {
-    label: 'Groups & custom attributes mapping (GA)',
-    url: 'https://clerk.com/changelog/2026-05-21-directory-sync-groups-attributes-ga',
-  },
-  {
-    label: 'Directory Sync (SCIM) GA',
-    url: 'https://clerk.com/changelog/2026-04-16-directory-sync',
-  },
-  {
-    label: 'Auto-create first organization with smart naming',
-    url: 'https://clerk.com/changelog/2026-01-22-default-organization-naming',
-  },
-  {
-    label: 'Role Sets (available roles per organization)',
-    url: 'https://clerk.com/changelog/2026-01-12-organization-role-sets',
-  },
-  {
-    label: 'Verified domains in Dashboard & Backend API',
-    url: 'https://clerk.com/changelog/2025-08-07-verified-domains-dashboard-backend-api',
-  },
-  {
-    label: 'Top-level Features + redesigned Roles & Permissions',
-    url: 'https://clerk.com/changelog/2025-07-10-top-level-features-plus-roles-and-permissions',
-  },
-  {
-    label: 'Billing MRR Report',
-    url: 'https://clerk.com/changelog/2025-06-11-billing-mrr-report',
-  },
-  {
-    label: 'Subscription Payments',
-    url: 'https://clerk.com/changelog/2025-06-06-payment-history',
-  },
-]
-
 type Props = {
   personal?: boolean
 }
@@ -148,30 +109,8 @@ export const AboutMe: FC<Props> = ({ personal = true }) => (
         working on the B2B side of the authentication platform. I worked across
         the stack, React and TypeScript in the dashboard and Go on the backend,
         on organizations, SSO and enterprise connections (SAML and OIDC), SCIM
-        directory sync, and roles & permissions. Some of it shipped publicly:
+        directory sync, and roles & permissions.
       </Text>
-
-      <Box mt='4'>
-        <Text lineHeight='3.2rem' color='gray.300'>
-          Selected work
-        </Text>
-
-        {selectedWork.map((item) => (
-          <Text
-            key={item.url}
-            as={motion.a}
-            href={item.url}
-            target='_blank'
-            rel='noopener noreferrer'
-            whileHover={{ opacity: 0.6 }}
-            display='block'
-            fontWeight='600'
-            lineHeight='3.2rem'
-          >
-            {item.label}
-          </Text>
-        ))}
-      </Box>
 
       <Text lineHeight='3.2rem' mt='4'>
         Before Clerk I was at Sticker Mule, and spent five years at Codeminer42
@@ -193,7 +132,16 @@ export const AboutMe: FC<Props> = ({ personal = true }) => (
       {personal && (
         <Text lineHeight='3.2rem' mt='4'>
           I'm currently looking for a new role. If you're building something
-          interesting, say hi.
+          interesting,{' '}
+          <Text
+            as={motion.a}
+            href='mailto:iagodahlemlorensini@gmail.com'
+            whileHover={{ opacity: 0.6 }}
+            fontWeight='600'
+          >
+            say hi
+          </Text>
+          .
         </Text>
       )}
     </Box>
@@ -218,9 +166,10 @@ export const Experience = () => (
           end: job.endDate ?? new Date(),
         })
 
-        const durationFormat = durationObj.months
-          ? ['years', 'months']
-          : ['days']
+        const durationFormat =
+          durationObj.years || durationObj.months
+            ? ['years', 'months']
+            : ['days']
 
         const duration = formatDuration(durationObj, {
           format: durationFormat,
