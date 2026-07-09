@@ -12,70 +12,31 @@ export const jobs = [
     companyUrl: 'https://clerk.com',
     startDate: new Date('Jan, 07, 2025'),
     endDate: new Date('July, 09, 2026'),
+    stack: 'React · TypeScript · Go',
+    detail:
+      'B2B side of the authentication platform: organizations, SSO & enterprise connections (SAML/OIDC), SCIM directory sync, roles & permissions.',
   },
   {
-    jobTitle: 'Software Engineer',
+    jobTitle: 'Senior Software Engineer',
     jobType: 'Full-time',
     companyName: 'StickerMule',
     companyUrl: 'https://stickermule.com',
     startDate: new Date('Dec, 05, 2022'),
     endDate: new Date('Jan, 03, 2025'),
+    stack: 'Ruby on Rails · Node.js',
+    detail:
+      'Backend on the Finances then Platform teams: order management, and migrating the legacy Rails monolith to Node microservices.',
   },
   {
-    jobTitle: 'Software Engineer',
+    jobTitle: 'Senior Software Engineer',
     jobType: 'Full-time',
     companyName: 'Codeminer42',
     companyUrl: 'https://codeminer42.com',
     startDate: new Date('May, 2017'),
     endDate: new Date('Dec, 02, 2022'),
-  },
-  {
-    jobTitle: 'Software Engineer',
-    jobType: 'Contractor',
-    companyName: 'StackCommerce',
-    companyUrl: 'https://www.stackcommerce.com',
-    startDate: new Date('May, 2022'),
-    endDate: new Date('Dec, 2022'),
-  },
-  {
-    jobTitle: 'Software Engineer',
-    jobType: 'Contractor',
-    companyName: '9Count',
-    companyUrl: 'https://9count.co',
-    startDate: new Date('Feb, 2022'),
-    endDate: new Date('May, 2022'),
-  },
-  {
-    jobTitle: 'Software Engineer',
-    jobType: 'Contractor',
-    companyName: 'LiftForward',
-    companyUrl: 'https://liftforward.com',
-    startDate: new Date('October, 2021'),
-    endDate: new Date('Feb, 2022'),
-  },
-  {
-    jobTitle: 'Software Engineer',
-    jobType: 'Contractor',
-    companyName: 'Edlio',
-    companyUrl: 'https://edlio.com',
-    startDate: new Date('May, 2021'),
-    endDate: new Date('September, 2021'),
-  },
-  {
-    jobTitle: 'Software Engineer',
-    jobType: 'Contractor',
-    companyName: 'GoDaddy',
-    companyUrl: 'https://godaddy.com',
-    startDate: new Date('January, 2018'),
-    endDate: new Date('May, 2021'),
-  },
-  {
-    jobTitle: 'Front-End Engineer',
-    jobType: 'Contractor',
-    companyName: 'Folha de S.Paulo',
-    companyUrl: 'https://folha.uol.com.br',
-    startDate: new Date('July, 2017'),
-    endDate: new Date('December, 2017'),
+    stack: 'React · Node · Ruby',
+    detail:
+      'Full-stack consulting for international clients: GoDaddy, StackCommerce, Edlio, LiftForward, 9Count, Folha de S.Paulo.',
   },
   {
     jobTitle: 'Software Engineer',
@@ -84,6 +45,9 @@ export const jobs = [
     companyUrl: 'https://cwi.com.br',
     startDate: new Date('September, 2015'),
     endDate: new Date('May, 2017'),
+    stack: 'Java · Angular · Oracle · Sass',
+    detail:
+      'Frontend for a health-insurance company, building most of the UI for their new applications.',
   },
 ]
 
@@ -200,6 +164,13 @@ export const Experience = () => (
             <Text fontSize='1.4rem' lineHeight='3.2rem' color='gray.300'>
               {startDate} &#8212; {endDate} • {duration}
             </Text>
+
+            {job.detail && <Text lineHeight='3.2rem'>{job.detail}</Text>}
+            {job.stack && (
+              <Text fontSize='1.4rem' lineHeight='3.2rem' color='gray.300'>
+                {job.stack}
+              </Text>
+            )}
           </Box>
         )
       })}
