@@ -40,7 +40,7 @@ const ResumePage = (props) => {
             Software Engineer
           </Text>
 
-          <AboutMe />
+          <AboutMe personal={false} />
 
           <Experience />
         </Container>

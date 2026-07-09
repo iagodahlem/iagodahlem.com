@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { format, intervalToDuration, formatDuration } from 'date-fns'
 import css from '@styled-system/css'
 import { motion } from 'framer-motion'
@@ -126,7 +126,11 @@ export const selectedWork = [
   },
 ]
 
-export const AboutMe = () => (
+type Props = {
+  personal?: boolean
+}
+
+export const AboutMe: FC<Props> = ({ personal = true }) => (
   <>
     <Heading as='h2' fontFamily='heading' fontSize='8' mb='5'>
       About Me
@@ -176,17 +180,22 @@ export const AboutMe = () => (
         corner cases, and keep software maintainable as it grows.
       </Text>
 
-      <Text lineHeight='3.2rem' mt='4'>
-        I live in Florianópolis with my wife 👩, our crazy dog Helga 🐶, and our
-        daughter Ramona 👶. When I'm not working you'll find me playing with
-        Ramona, sneaking in a video game when she lets me, cooking for the
-        family (Sunday BBQ 🍖 is sacred), or fixing something around the house.
-      </Text>
+      {personal && (
+        <Text lineHeight='3.2rem' mt='4'>
+          I live in Florianópolis with my wife 👩, our crazy dog Helga 🐶, and
+          our daughter Ramona 👶. When I'm not working you'll find me playing
+          with Ramona, sneaking in a video game when she lets me, cooking for
+          the family (Sunday BBQ 🍖 is sacred), or fixing something around the
+          house.
+        </Text>
+      )}
 
-      <Text lineHeight='3.2rem' mt='4'>
-        I'm currently looking for a new role. If you're building something
-        interesting, say hi.
-      </Text>
+      {personal && (
+        <Text lineHeight='3.2rem' mt='4'>
+          I'm currently looking for a new role. If you're building something
+          interesting, say hi.
+        </Text>
+      )}
     </Box>
   </>
 )
