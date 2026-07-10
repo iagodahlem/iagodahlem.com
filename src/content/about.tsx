@@ -53,127 +53,148 @@ export const jobs = [
 
 type Props = {
   personal?: boolean
+  compact?: boolean
 }
 
-export const AboutMe: FC<Props> = ({ personal = true }) => (
-  <>
-    <Heading as='h2' fontFamily='heading' fontSize='8' mb='5'>
-      About Me
-    </Heading>
+// `compact` tightens the fixed 3.2rem line-height used throughout this file.
+// It's the one hand-picked value the printer theme's proportional font/space
+// scaling (see theme.ts) can't reach, since it's a literal CSS value rather
+// than a theme lookup. Only resume.tsx passes compact — the /about page keeps
+// the normal, more relaxed spacing.
+const lineHeightFor = (compact?: boolean) => (compact ? '2.2rem' : '3.2rem')
 
-    <Box color='gray.200'>
-      <Text lineHeight='3.2rem'>
-        Hey there! 👋 I'm Iago — a software engineer from Brazil. I build
-        products end to end: frontend-first, but happy to follow a problem into
-        the backend, the database, or the design file.
-      </Text>
+export const AboutMe: FC<Props> = ({ personal = true, compact = false }) => {
+  const lineHeight = lineHeightFor(compact)
 
-      <Text lineHeight='3.2rem' mt='4'>
-        For about a year and a half I was a Senior Software Engineer at Clerk,
-        working on the B2B side of the authentication platform. I worked across
-        the stack, React and TypeScript in the dashboard and Go on the backend,
-        on organizations, SSO and enterprise connections (SAML and OIDC), SCIM
-        directory sync, and roles & permissions.
-      </Text>
+  return (
+    <>
+      <Heading as='h2' fontFamily='heading' fontSize='8' mb='5'>
+        About Me
+      </Heading>
 
-      <Text lineHeight='3.2rem' mt='4'>
-        Before Clerk I was at Sticker Mule, and spent five years at Codeminer42
-        consulting for teams like GoDaddy, StackCommerce, and Folha de S.Paulo.
-        The way I like to work: ship in small, well-tested increments, sweat the
-        corner cases, and keep software maintainable as it grows.
-      </Text>
-
-      {personal && (
-        <Text lineHeight='3.2rem' mt='4'>
-          I live in Florianópolis with my wife 👩, our crazy dog Helga 🐶, and
-          our daughter Ramona 👶. When I'm not working you'll find me playing
-          with Ramona, sneaking in a video game when she lets me, cooking for
-          the family (Sunday BBQ 🍖 is sacred), or fixing something around the
-          house.
+      <Box color='gray.200'>
+        <Text lineHeight={lineHeight}>
+          Hey there! 👋 I'm Iago — a software engineer from Brazil. I build
+          products end to end: frontend-first, but happy to follow a problem
+          into the backend, the database, or the design file.
         </Text>
-      )}
 
-      {personal && (
-        <Text lineHeight='3.2rem' mt='4'>
-          I'm currently looking for a new role. If you're building something
-          interesting,{' '}
-          <Text
-            as={motion.a}
-            href='mailto:iagodahlemlorensini@gmail.com'
-            whileHover={{ opacity: 0.6 }}
-            fontWeight='600'
-          >
-            say hi
+        <Text lineHeight={lineHeight} mt='4'>
+          For about a year and a half I was a Senior Software Engineer at Clerk,
+          working on the B2B side of the authentication platform. I worked
+          across the stack, React and TypeScript in the dashboard and Go on the
+          backend, on organizations, SSO and enterprise connections (SAML and
+          OIDC), SCIM directory sync, and roles & permissions.
+        </Text>
+
+        <Text lineHeight={lineHeight} mt='4'>
+          Before Clerk I was at Sticker Mule, and spent five years at
+          Codeminer42 consulting for teams like GoDaddy, StackCommerce, and
+          Folha de S.Paulo. The way I like to work: ship in small, well-tested
+          increments, sweat the corner cases, and keep software maintainable as
+          it grows.
+        </Text>
+
+        {personal && (
+          <Text lineHeight={lineHeight} mt='4'>
+            I live in Florianópolis with my wife 👩, our crazy dog Helga 🐶, and
+            our daughter Ramona 👶. When I'm not working you'll find me playing
+            with Ramona, sneaking in a video game when she lets me, cooking for
+            the family (Sunday BBQ 🍖 is sacred), or fixing something around the
+            house.
           </Text>
-          .
-        </Text>
-      )}
-    </Box>
-  </>
-)
+        )}
 
-export const Experience = () => (
-  <>
-    <Heading as='h3' fontFamily='heading' fontSize='7' mt='5'>
-      Experience
-    </Heading>
-
-    <Box mt='4'>
-      {jobs.map((job) => {
-        const startDate = format(job.startDate, 'LLL, yyyy')
-        const endDate = job.endDate
-          ? format(job.endDate, 'LLL, yyyy')
-          : 'Present'
-
-        const durationObj = intervalToDuration({
-          start: job.startDate,
-          end: job.endDate ?? new Date(),
-        })
-
-        const durationFormat =
-          durationObj.years || durationObj.months
-            ? ['years', 'months']
-            : ['days']
-
-        const duration = formatDuration(durationObj, {
-          format: durationFormat,
-        })
-
-        return (
-          <Box
-            key={`${job.jobTitle}-${job.companyName}`}
-            css={css({ ':not(:last-child)': { mb: '4' } })}
-          >
+        {personal && (
+          <Text lineHeight={lineHeight} mt='4'>
+            I'm currently looking for a new role. If you're building something
+            interesting,{' '}
             <Text
               as={motion.a}
-              href={job.companyUrl}
+              href='mailto:iagodahlemlorensini@gmail.com'
               whileHover={{ opacity: 0.6 }}
               fontWeight='600'
-              lineHeight='3.2rem'
             >
-              {job.companyName}
+              say hi
             </Text>
+            .
+          </Text>
+        )}
+      </Box>
+    </>
+  )
+}
 
-            <Text lineHeight='3.2rem'>
-              {job.jobTitle} •{' '}
-              <Text as='span' color='gray.300'>
-                {job.jobType}
+export const Experience: FC<{ compact?: boolean }> = ({ compact = false }) => {
+  const lineHeight = lineHeightFor(compact)
+
+  return (
+    <>
+      <Heading as='h3' fontFamily='heading' fontSize='7' mt='5'>
+        Experience
+      </Heading>
+
+      <Box mt='4'>
+        {jobs.map((job) => {
+          const startDate = format(job.startDate, 'LLL, yyyy')
+          const endDate = job.endDate
+            ? format(job.endDate, 'LLL, yyyy')
+            : 'Present'
+
+          const durationObj = intervalToDuration({
+            start: job.startDate,
+            end: job.endDate ?? new Date(),
+          })
+
+          const durationFormat =
+            durationObj.years || durationObj.months
+              ? ['years', 'months']
+              : ['days']
+
+          const duration = formatDuration(durationObj, {
+            format: durationFormat,
+          })
+
+          return (
+            <Box
+              key={`${job.jobTitle}-${job.companyName}`}
+              css={css({ ':not(:last-child)': { mb: '4' } })}
+            >
+              <Text
+                as={motion.a}
+                href={job.companyUrl}
+                whileHover={{ opacity: 0.6 }}
+                fontWeight='600'
+                lineHeight={lineHeight}
+              >
+                {job.companyName}
               </Text>
-            </Text>
 
-            <Text fontSize='1.4rem' lineHeight='3.2rem' color='gray.300'>
-              {startDate} &#8212; {endDate} • {duration}
-            </Text>
-
-            {job.detail && <Text lineHeight='3.2rem'>{job.detail}</Text>}
-            {job.stack && (
-              <Text fontSize='1.4rem' lineHeight='3.2rem' color='gray.300'>
-                {job.stack}
+              <Text lineHeight={lineHeight}>
+                {job.jobTitle} •{' '}
+                <Text as='span' color='gray.300'>
+                  {job.jobType}
+                </Text>
               </Text>
-            )}
-          </Box>
-        )
-      })}
-    </Box>
-  </>
-)
+
+              <Text fontSize='1.4rem' lineHeight={lineHeight} color='gray.300'>
+                {startDate} &#8212; {endDate} • {duration}
+              </Text>
+
+              {job.detail && <Text lineHeight={lineHeight}>{job.detail}</Text>}
+              {job.stack && (
+                <Text
+                  fontSize='1.4rem'
+                  lineHeight={lineHeight}
+                  color='gray.300'
+                >
+                  {job.stack}
+                </Text>
+              )}
+            </Box>
+          )
+        })}
+      </Box>
+    </>
+  )
+}
