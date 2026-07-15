@@ -41,12 +41,12 @@ const Seo: FC<Props> = ({
   )
 
   const seo = {
+    ...siteMetadata,
     title: title || siteMetadata.title,
-    description,
+    description: description || siteMetadata.description,
     canonicalUrl: pathname
       ? `${siteMetadata.siteUrl}${pathname.replace(/\/$/, '')}`
       : siteMetadata.siteUrl,
-    ...siteMetadata,
   }
 
   return (
