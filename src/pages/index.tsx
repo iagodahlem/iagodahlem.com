@@ -40,14 +40,15 @@ const IndexPage = ({ data }) => {
             Hi! 👋 I'm Iago.
             <br />A software engineer from Brazil.
             <br />
-            I'm currently working at{' '}
+            Most recently at{' '}
             <Text
               as={motion.a}
               href='https://clerk.com'
               whileHover={{ opacity: 0.6 }}
             >
               Clerk.com
-            </Text>
+            </Text>{' '}
+            — now open to new roles and consulting.
           </Text>
 
           <Nav />
