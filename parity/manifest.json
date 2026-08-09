@@ -1,0 +1,68 @@
+{
+  "$schema": "./manifest.schema.json",
+  "source": "https://iagodahlem.com",
+  "captured_at": "2026-08-09",
+  "notes": "Titles captured from the rendered <title> tag on the live (Gatsby/Netlify) site. Every URL below uses a trailing slash, matching the live site's canonical form (non-trailing-slash requests 301-redirect to the trailing-slash URL there).",
+  "pages": [
+    {
+      "path": "/",
+      "title": "Home / Iago Dahlem Lorensini",
+      "type": "home"
+    },
+    {
+      "path": "/blog/",
+      "title": "Articles / Iago Dahlem Lorensini",
+      "type": "blog-index"
+    },
+    {
+      "path": "/about/",
+      "title": "About / Iago Dahlem Lorensini",
+      "type": "about"
+    },
+    {
+      "path": "/blog/2017-06-01-hello-world/",
+      "title": "Hello World / Iago Dahlem Lorensini",
+      "type": "post",
+      "source": "src/pages/blog/2017-06-01-hello-world/index.md"
+    },
+    {
+      "path": "/blog/2017-06-05-how-to-organize-your-styles-with-itcss/",
+      "title": "How to Organize your Styles with ITCSS / Iago Dahlem Lorensini",
+      "type": "post",
+      "source": "src/pages/blog/2017-06-05-how-to-organize-your-styles-with-itcss/index.md"
+    },
+    {
+      "path": "/blog/2018-10-22-scalable-front-end-1-architecture-fundamentals/",
+      "title": "Scalable Frontend #1 - Architecture Fundamentals / Iago Dahlem Lorensini",
+      "type": "post",
+      "source": "src/pages/blog/2018-10-22-scalable-front-end-1-architecture-fundamentals/index.md",
+      "external_link": "https://blog.codeminer42.com/scalable-frontend-1-architecture-9b80a16b8ec7"
+    },
+    {
+      "path": "/blog/2018-11-22-scalable-front-end-2-common-patterns/",
+      "title": "Scalable Frontend #2 - Common Patterns / Iago Dahlem Lorensini",
+      "type": "post",
+      "source": "src/pages/blog/2018-11-22-scalable-front-end-2-common-patterns/index.md",
+      "external_link": "https://blog.codeminer42.com/scalable-frontend-2-common-patterns-d2f28aef0714"
+    },
+    {
+      "path": "/blog/2019-04-05-rails-and-containerized-dbs/",
+      "title": "Rails and Containerized Databases / Iago Dahlem Lorensini",
+      "type": "post",
+      "source": "src/pages/blog/2019-04-05-rails-and-containerized-dbs/index.md"
+    },
+    {
+      "path": "/blog/2019-05-21-scalable-front-end-3-the-state-layer/",
+      "title": "Scalable Frontend #3 - The State Layer / Iago Dahlem Lorensini",
+      "type": "post",
+      "source": "src/pages/blog/2019-05-21-scalable-front-end-3-the-state-layer/index.md",
+      "external_link": "https://blog.codeminer42.com/scalable-frontend-3-the-state-layer-b23ed69ca57c"
+    },
+    {
+      "path": "/blog/2022-01-21-5-truths-about-tailwind-css/",
+      "title": "5 Truths About Tailwind CSS / Iago Dahlem Lorensini",
+      "type": "post",
+      "source": "src/pages/blog/2022-01-21-5-truths-about-tailwind-css/index.md"
+    }
+  ]
+}
