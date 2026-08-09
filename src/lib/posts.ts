@@ -89,3 +89,9 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     html: String(processed),
   }
 }
+
+/** All posts with rendered HTML, newest first — for the RSS feed. */
+export async function getAllPostsWithHtml(): Promise<Post[]> {
+  const posts = await Promise.all(readSlugs().map((slug) => getPostBySlug(slug)))
+  return posts.sort((a, b) => (a.date < b.date ? 1 : -1))
+}
