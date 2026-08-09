@@ -1,12 +1,9 @@
 import Link from 'next/link'
 
-// The live site also has a "Talks" nav entry (proxied to a separate
-// subdomain via a host-level redirect). That page isn't part of this
-// migration pass, so it's left out of the nav rather than shipping a link
-// that 404s on this branch.
 const NAV_LINKS = [
   { href: '/about/', label: 'About' },
   { href: '/blog/', label: 'Articles' },
+  { href: '/talks/', label: 'Talks' },
 ]
 
 export function SiteHeader() {

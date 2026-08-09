@@ -20,6 +20,11 @@
       "type": "about"
     },
     {
+      "path": "/talks/",
+      "title": "Talks / Iago Dahlem Lorensini",
+      "type": "talks"
+    },
+    {
       "path": "/blog/2017-06-01-hello-world/",
       "title": "Hello World / Iago Dahlem Lorensini",
       "type": "post",
