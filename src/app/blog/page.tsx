@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
 import { getAllPosts } from '@/lib/posts'
 import { PostList } from '@/components/post-list'
+import { PAGE_DESCRIPTIONS, pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Articles',
-  description: 'All Articles',
-  alternates: { canonical: '/blog/' },
-}
+  description: PAGE_DESCRIPTIONS.blog,
+  path: '/blog/',
+})
 
 export default function BlogIndexPage() {
   const posts = getAllPosts()

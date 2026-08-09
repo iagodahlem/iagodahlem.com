@@ -1,18 +1,20 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/posts'
 import { PostList } from '@/components/post-list'
 import { siteConfig, socialLinks } from '@/lib/site'
+import { PAGE_DESCRIPTIONS, pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  // Next's root-layout title template only applies to child segments, not
-  // to app/page.tsx itself (same segment as the layout that defines it) —
-  // so the homepage spells out the full title to match the live site's
-  // "Home / Iago Dahlem Lorensini".
+// Next's root-layout title template only applies to child segments, not
+// to app/page.tsx itself (same segment as the layout that defines it) —
+// so the homepage spells out the full title to match the live site's
+// "Home / Iago Dahlem Lorensini". The OG/Twitter title below intentionally
+// stays short, matching the live site's og:title.
+export const metadata = pageMetadata({
   title: `Home / ${siteConfig.name}`,
-  description: siteConfig.description,
-  alternates: { canonical: '/' },
-}
+  ogTitle: 'Home',
+  description: PAGE_DESCRIPTIONS.home,
+  path: '/',
+})
 
 export default function HomePage() {
   const posts = getAllPosts().slice(0, 5)

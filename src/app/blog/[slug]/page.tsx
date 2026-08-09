@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/posts'
 import { siteConfig } from '@/lib/site'
+import { pageMetadata } from '@/lib/seo'
 
 export function generateStaticParams() {
   return getAllPostSlugs().map((slug) => ({ slug }))
@@ -33,11 +34,13 @@ export async function generateMetadata({
   const post = await loadPost(slug)
   if (!post) return {}
 
-  return {
+  return pageMetadata({
     title: post.title,
     description: post.description || siteConfig.description,
-    alternates: { canonical: `/blog/${slug}/` },
-  }
+    path: `/blog/${slug}/`,
+    type: 'article',
+    publishedTime: new Date(`${post.date}T00:00:00Z`).toISOString(),
+  })
 }
 
 export default async function BlogPostPage({

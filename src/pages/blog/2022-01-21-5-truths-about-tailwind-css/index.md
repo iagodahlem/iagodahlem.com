@@ -1,6 +1,6 @@
 ---
 title: 5 Truths About Tailwind CSS
-description: ''
+description: 'Five honest takeaways from two months building an e-commerce project with Tailwind CSS: the verbose HTML, the built-in consistency, and where it falls short.'
 date: '2022-01-21'
 tags: ['front-end', 'css', 'tailwind']
 ---

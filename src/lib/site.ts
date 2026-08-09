@@ -20,3 +20,8 @@ export const socialLinks = [
   { href: siteConfig.social.linkedin, label: 'Linkedin' },
   { href: siteConfig.social.instagram, label: 'Instagram' },
 ]
+
+/** Resolves a site-relative path (e.g. "/blog/") to an absolute URL. */
+export function absoluteUrl(path: string) {
+  return new URL(path, siteConfig.url).toString()
+}

@@ -1,11 +1,11 @@
-import type { Metadata } from 'next'
 import { Experience } from '@/components/experience'
+import { PAGE_DESCRIPTIONS, pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'About',
-  description: 'About Me',
-  alternates: { canonical: '/about/' },
-}
+  description: PAGE_DESCRIPTIONS.about,
+  path: '/about/',
+})
 
 export default function AboutPage() {
   return (

@@ -1,10 +1,11 @@
-import type { Metadata } from 'next'
 import { talks } from '@/lib/talks'
+import { PAGE_DESCRIPTIONS, pageMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Talks',
-  alternates: { canonical: '/talks/' },
-}
+  description: PAGE_DESCRIPTIONS.talks,
+  path: '/talks/',
+})
 
 export default function TalksPage() {
   return (
