@@ -1,4 +1,4 @@
-.cache
+.next
+out
 package.json
 package-lock.json
-public
