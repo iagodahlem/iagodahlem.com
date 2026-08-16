@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Iago Dahlem Lorensini',
   description:
-    "Hey there! I'm Iago — a software engineer from Florianópolis, Brazil. Most recently at Clerk.",
+    "Hey there! I'm Iago — a software engineer from Florianópolis, Brazil. Most recently at Clerk, open for consulting.",
   url: 'https://iagodahlem.com',
   author: {
     name: 'Iago Dahlem Lorensini',

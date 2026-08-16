@@ -32,8 +32,8 @@ export default function HomePage() {
         Most recently at{' '}
         <a href="https://clerk.com" className="link-fade">
           Clerk.com
-        </a>
-        .
+        </a>{' '}
+        — open for consulting.
       </p>
 
       <div className="mt-6 flex gap-5 font-heading text-base leading-[normal]">
