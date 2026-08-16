@@ -1,6 +1,7 @@
 import Link from 'next/link'
+import { MobileNav } from './mobile-nav'
 
-const NAV_LINKS = [
+export const NAV_LINKS = [
   { href: '/about/', label: 'About' },
   { href: '/blog/', label: 'Articles' },
   { href: '/talks/', label: 'Talks' },
@@ -18,13 +19,16 @@ export function SiteHeader() {
           I.
         </Link>
 
-        <nav className="flex gap-5 font-heading text-[21px] font-bold leading-[normal]">
+        {/* Desktop: links stay inline. Mobile (<sm): collapsed behind MobileNav's button. */}
+        <nav className="hidden gap-5 font-heading text-[21px] font-bold leading-[normal] sm:flex">
           {NAV_LINKS.map((link) => (
             <Link key={link.href} href={link.href} className="link-fade">
               {link.label}
             </Link>
           ))}
         </nav>
+
+        <MobileNav />
       </div>
     </header>
   )
