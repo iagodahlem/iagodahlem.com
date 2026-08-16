@@ -4,7 +4,7 @@ import { jobs } from '@/lib/experience'
 export function Experience() {
   return (
     <>
-      <h2 className="mt-16 font-heading text-xl font-bold">Experience</h2>
+      <h2 className="mt-16 font-heading text-[28px] font-bold">Experience</h2>
 
       <div className="mt-6 flex flex-col gap-8">
         {jobs.map((job) => {
@@ -40,12 +40,12 @@ export function Experience() {
                 {job.jobTitle} <span className="text-muted">• {job.jobType}</span>
               </p>
 
-              <p className="text-sm text-subtle">
+              <p className="text-base text-subtle">
                 {startDate} &#8212; {endDate} • {duration}
               </p>
 
               {job.detail && <p className="mt-1">{job.detail}</p>}
-              {job.stack && <p className="text-sm text-subtle">{job.stack}</p>}
+              {job.stack && <p className="text-base text-subtle">{job.stack}</p>}
             </div>
           )
         })}

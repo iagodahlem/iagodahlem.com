@@ -9,16 +9,16 @@ export const metadata = pageMetadata({
 
 export default function TalksPage() {
   return (
-    <div className="mx-auto max-w-2xl px-6 py-16">
-      <h1 className="font-heading text-2xl font-bold">Talks</h1>
+    <div className="mx-auto max-w-[40rem] px-8 py-32">
+      <h1 className="font-heading text-[37px] font-bold">Talks</h1>
 
       <div className="mt-8 flex flex-col gap-8">
         {talks.map((talk) => (
           <div key={talk.title}>
-            <p className="font-heading text-lg font-bold">{talk.title}</p>
+            <p className="font-body text-[21px] font-semibold">{talk.title}</p>
 
             {talk.description && (
-              <p className="text-muted">
+              <p className="text-subtle">
                 <em>{talk.description}</em>
               </p>
             )}
@@ -30,7 +30,7 @@ export default function TalksPage() {
                     href={talk.videoUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="link-fade text-muted underline"
+                    className="link-fade text-subtle underline"
                   >
                     <em>Video</em>
                   </a>
@@ -42,7 +42,7 @@ export default function TalksPage() {
                   href={talk.slidesUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="link-fade text-muted underline"
+                  className="link-fade text-subtle underline"
                 >
                   <em>Slides</em>
                 </a>

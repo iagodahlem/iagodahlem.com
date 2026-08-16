@@ -9,10 +9,10 @@ export const metadata = pageMetadata({
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-2xl px-6 py-16">
-      <h1 className="font-heading text-2xl font-bold">About Me</h1>
+    <div className="mx-auto max-w-[40rem] px-8 py-32">
+      <h1 className="font-heading text-[37px] font-bold">About Me</h1>
 
-      <div className="mt-6 flex flex-col gap-4 text-muted">
+      <div className="mt-6 flex flex-col gap-4 leading-8 text-muted">
         <p>
           Hey there! 👋 I&apos;m Iago — a software engineer from Brazil. I
           build products end to end: frontend-first, but happy to follow a

@@ -2,8 +2,8 @@ import { socialLinks } from '@/lib/site'
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-subtle">
-      <div className="mx-auto flex max-w-2xl justify-center gap-5 px-6 py-8 font-heading text-sm text-muted">
+    <footer>
+      <div className="mx-auto flex max-w-[40rem] justify-center gap-5 p-8 font-heading text-base leading-[normal]">
         {socialLinks.map((link) => (
           <a
             key={link.href}

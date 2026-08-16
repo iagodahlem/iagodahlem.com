@@ -53,12 +53,12 @@ export default async function BlogPostPage({
   if (!post) notFound()
 
   return (
-    <article className="mx-auto max-w-2xl px-6 py-16">
+    <article className="mx-auto max-w-[40rem] px-8 py-32">
       <header className="flex flex-col items-center text-center">
-        <h1 className="font-heading text-3xl font-bold">{post.title}</h1>
-        <p className="mt-3 text-sm text-subtle">{formatDate(post.date)}</p>
+        <h1 className="font-heading text-[37px] font-bold">{post.title}</h1>
+        <p className="text-base text-subtle">{formatDate(post.date)}</p>
         {post.link && (
-          <p className="mt-4 text-sm text-subtle">
+          <p className="mt-4 text-base text-subtle">
             Originally published at{' '}
             <a href={post.link} className="link-fade underline" target="_blank" rel="noreferrer">
               {new URL(post.link).hostname}

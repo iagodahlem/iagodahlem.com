@@ -20,23 +20,23 @@ export default function HomePage() {
   const posts = getAllPosts().slice(0, 5)
 
   return (
-    <div className="mx-auto max-w-2xl px-6 py-16">
-      <h1 className="font-heading text-2xl font-bold">
+    <div className="mx-auto max-w-[40rem] px-8 py-32">
+      <h1 className="font-body text-[21px] font-medium">
         Iago Dahlem Lorensini
       </h1>
 
-      <p className="mt-4 font-heading text-2xl leading-snug">
+      <p className="mt-4 font-heading text-[28px] leading-[normal] font-bold">
         Hi! 👋 I&apos;m Iago.
         <br />A software engineer from Brazil.
         <br />
         Most recently at{' '}
-        <a href="https://clerk.com" className="link-fade underline">
+        <a href="https://clerk.com" className="link-fade">
           Clerk.com
-        </a>{' '}
-        — now open to new roles and consulting.
+        </a>
+        .
       </p>
 
-      <div className="mt-6 flex gap-5 font-heading text-sm text-muted">
+      <div className="mt-6 flex gap-5 font-heading text-base leading-[normal]">
         {socialLinks.map((link) => (
           <a
             key={link.href}
@@ -51,13 +51,13 @@ export default function HomePage() {
       </div>
 
       <section className="mt-16">
-        <h2 className="font-heading text-xl font-bold">Latest Articles</h2>
+        <h2 className="font-heading text-[28px] font-bold">Latest Articles</h2>
 
         <div className="mt-6">
           <PostList posts={posts} />
         </div>
 
-        <p className="mt-6 text-sm text-subtle">
+        <p className="mt-6 text-base text-subtle">
           <Link href="/blog/" className="link-fade underline">
             All articles
           </Link>

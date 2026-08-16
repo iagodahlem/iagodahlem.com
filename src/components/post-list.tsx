@@ -11,19 +11,19 @@ function formatDate(iso: string) {
 }
 
 const rowClassName =
-  'link-fade flex flex-col justify-between gap-1 py-4 sm:flex-row sm:items-center sm:gap-4'
+  'link-fade flex flex-col justify-between gap-1 py-8 sm:flex-row sm:items-center sm:gap-4'
 
 export function PostList({ posts }: { posts: PostSummary[] }) {
   return (
-    <ul className="flex flex-col border-t border-b border-subtle [&>li:not(:last-child)]:border-b [&>li:not(:last-child)]:border-subtle">
+    <ul className="flex flex-col">
       {posts.map((post) => {
         const dateEl = (
-          <span className="shrink-0 text-sm text-subtle sm:text-right">
+          <span className="shrink-0 text-base font-medium text-subtle sm:text-right">
             {formatDate(post.date)}
           </span>
         )
         const titleEl = (
-          <span className="font-heading text-lg font-bold">
+          <span className="font-body text-[21px] font-semibold">
             {post.title}
             {post.link && (
               <span className="ml-1 text-sm text-subtle" aria-hidden>
