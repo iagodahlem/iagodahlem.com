@@ -28,12 +28,6 @@ export default function HomePage() {
       <p className="mt-4 font-heading text-[28px] leading-[normal] font-bold">
         Hi! 👋 I&apos;m Iago.
         <br />A software engineer from Brazil.
-        <br />
-        Most recently at{' '}
-        <a href="https://clerk.com" className="link-fade">
-          Clerk.com
-        </a>{' '}
-        — open for consulting.
       </p>
 
       <div className="mt-6 flex gap-5 font-heading text-base leading-[normal]">
