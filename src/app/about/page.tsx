@@ -44,8 +44,7 @@ export default function AboutPage() {
         </p>
 
         <p>
-          I&apos;m currently looking for a new role. If you&apos;re building
-          something interesting,{' '}
+          If you&apos;re building something interesting,{' '}
           <a
             href="mailto:iagodahlemlorensini@gmail.com"
             className="link-fade font-semibold text-ink"
