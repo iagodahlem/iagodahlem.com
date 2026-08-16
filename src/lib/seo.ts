@@ -8,7 +8,7 @@ import { absoluteUrl, siteConfig } from './site'
  * live with their content in each post's frontmatter instead.
  */
 export const PAGE_DESCRIPTIONS = {
-  home: "Personal site of Iago Dahlem, a software engineer from Florianópolis, Brazil, building products end to end — most recently at Clerk, now open to new roles.",
+  home: "Personal site of Iago Dahlem, a software engineer from Florianópolis, Brazil, building products end to end — most recently at Clerk.",
   about:
     "About Iago Dahlem: a Brazil-based software engineer's background and work history, from CWI Software through Clerk, and what he's looking for next.",
   blog: 'Articles on frontend architecture, CSS, Ruby on Rails, and other software engineering topics from Iago Dahlem, a software engineer based in Brazil.',
