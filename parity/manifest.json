@@ -2,7 +2,7 @@
   "$schema": "./manifest.schema.json",
   "source": "https://iagodahlem.com",
   "captured_at": "2026-08-09",
-  "notes": "Titles captured from the rendered <title> tag on the live (Gatsby/Netlify) site. Every URL below uses a trailing slash, matching the live site's canonical form (non-trailing-slash requests 301-redirect to the trailing-slash URL there).",
+  "notes": "Titles captured from the rendered <title> tag on the live (Gatsby/Netlify) site. Every URL below uses a trailing slash, matching the live site's canonical form (non-trailing-slash requests 301-redirect to the trailing-slash URL there). Pages added after the migration began (e.g. /projects/) didn't exist on the live site to capture -- their titles are taken from the new build itself instead, and registered here so the checker keeps covering every published route.",
   "pages": [
     {
       "path": "/",
@@ -23,6 +23,11 @@
       "path": "/talks/",
       "title": "Talks / Iago Dahlem Lorensini",
       "type": "talks"
+    },
+    {
+      "path": "/projects/",
+      "title": "Projects / Iago Dahlem Lorensini",
+      "type": "projects"
     },
     {
       "path": "/blog/2017-06-01-hello-world/",
