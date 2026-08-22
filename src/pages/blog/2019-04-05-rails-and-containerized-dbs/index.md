@@ -1,6 +1,6 @@
 ---
 title: Rails and Containerized Databases
-description: How to install ruby database gems without local database instances.
+description: 'How to install the Ruby pg and mysql2 gems against a Dockerized Postgres or MySQL database, without installing a local database instance on macOS.'
 date: '2019-04-05'
 tags: ['ruby', 'rails', 'docker', 'database', 'macos']
 link: ''

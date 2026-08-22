@@ -1,6 +1,6 @@
 ---
 title: Hello World
-description: First Things First.
+description: 'The first post on this blog: a short hello, why it exists, and a promise to write more often about software development and engineering work.'
 date: '2017-06-01'
 tags: []
 link: ''

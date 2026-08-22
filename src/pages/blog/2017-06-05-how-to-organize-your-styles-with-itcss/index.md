@@ -1,6 +1,6 @@
 ---
 title: How to Organize your Styles with ITCSS
-description: A sane, scalable, managed CSS architecture.
+description: 'An introduction to ITCSS, a CSS architecture that organizes stylesheets into layers of increasing specificity so large codebases stay predictable.'
 date: '2017-06-05'
 tags: []
 link: ''

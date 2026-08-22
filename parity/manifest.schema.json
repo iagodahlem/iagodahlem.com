@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Live-site parity manifest",
+  "description": "Every public URL on the live site, captured before the Next.js migration, with the exact page title. The build must emit a matching static page for each entry.",
+  "type": "object",
+  "required": ["source", "captured_at", "pages"],
+  "properties": {
+    "source": { "type": "string", "format": "uri" },
+    "captured_at": { "type": "string" },
+    "notes": { "type": "string" },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["path", "title", "type"],
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Site-relative URL path, always trailing-slash."
+          },
+          "title": {
+            "type": "string",
+            "description": "Exact <title> tag content on the live site."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["home", "blog-index", "about", "talks", "projects", "post"]
+          },
+          "source": {
+            "type": "string",
+            "description": "Repo-relative path to the markdown source, for post entries."
+          },
+          "external_link": {
+            "type": "string",
+            "format": "uri",
+            "description": "If set, this post's canonical content lives at this external URL; the local page still exists and must resolve."
+          }
+        }
+      }
+    }
+  }
+}

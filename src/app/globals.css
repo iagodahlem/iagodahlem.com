@@ -1,0 +1,164 @@
+@import 'tailwindcss';
+
+/*
+ * Small token layer — plain CSS custom properties, no external design
+ * system. The live site always renders its dark palette (no light mode,
+ * no `prefers-color-scheme` toggle, no user-facing switch) — matched here
+ * as the sole default rather than gated behind a media query.
+ */
+:root {
+  color-scheme: dark;
+
+  --color-bg: #11111a;
+  --color-fg: #ffffff;
+  --color-muted: #cfcfcf;
+  --color-subtle: #b1b1b1;
+  --color-border: #2c2c38;
+
+  --font-heading: var(--font-arvo), Georgia, 'Times New Roman', serif;
+  --font-body: var(--font-montserrat), -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+}
+
+/*
+ * Layered (not a bare rule) so it sits in Tailwind's cascade layer order —
+ * a bare `a { color: inherit }` here is unlayered CSS, which always beats
+ * layered utilities like .text-ink/.text-muted regardless of specificity,
+ * silently stopping those color utilities from ever applying to a link.
+ */
+@layer base {
+  a {
+    color: inherit;
+  }
+}
+
+@layer utilities {
+  .bg-page {
+    background-color: var(--color-bg);
+  }
+  .text-ink {
+    color: var(--color-fg);
+  }
+  .text-muted {
+    color: var(--color-muted);
+  }
+  .text-subtle {
+    color: var(--color-subtle);
+  }
+  .border-subtle {
+    border-color: var(--color-border);
+  }
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .link-fade {
+    transition: opacity 0.15s ease;
+  }
+  .link-fade:hover {
+    opacity: 0.6;
+  }
+}
+
+/* Post body typography — applied via the .prose class in components/prose.tsx */
+.prose {
+  color: var(--color-fg);
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.prose > * + * {
+  margin-top: 2em;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  margin-top: 4rem;
+  margin-bottom: 0;
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+}
+.prose h2 {
+  font-size: 1.75rem;
+}
+.prose h3 {
+  font-size: 1.375rem;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote,
+.prose table {
+  color: var(--color-muted);
+}
+
+.prose a {
+  color: var(--color-fg);
+  text-decoration: none;
+}
+
+.prose blockquote {
+  margin-left: 0;
+  font-style: italic;
+}
+
+.prose code {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+}
+
+.prose :not(pre) > code {
+  background-color: #282a36;
+  color: #f8f8f2;
+  border-radius: 0.3em;
+  padding: 0.25em 0.45em;
+}
+
+.prose pre {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  /* Code blocks stay on a dark panel (atom-one-dark via highlight.js). */
+  background-color: #282c34;
+  color: #abb2bf;
+}
+
+/* highlight.js's atom-one-dark theme sets its own padding on `code.hljs`
+   (imported in layout.tsx) — cancel it so the code text doesn't get a
+   second, stacked inset on top of `.prose pre`'s own padding above. */
+.prose pre code.hljs {
+  padding: 0;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.prose li > p {
+  margin-top: 0;
+}
