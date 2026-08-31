@@ -5,6 +5,8 @@ import Header from './Header'
 import Heading from './Heading'
 import Link from './Link'
 import Nav from './Nav'
+import PreviewFrame from './PreviewFrame'
+import ProjectCard from './ProjectCard'
 import Section from './Section'
 import Text from './Text'
 import Articles from './Articles'
@@ -19,6 +21,8 @@ export {
   Text,
   Link,
   Nav,
+  PreviewFrame,
+  ProjectCard,
   Section,
   Articles,
   Seo,
