@@ -84,5 +84,17 @@ module.exports = {
         trackingIds: ['UA-84438304-1'],
       },
     },
+    ...(process.env.GATSBY_POSTHOG_KEY && process.env.GATSBY_POSTHOG_HOST
+      ? [
+          {
+            resolve: 'gatsby-plugin-posthog',
+            options: {
+              apiKey: process.env.GATSBY_POSTHOG_KEY,
+              apiHost: process.env.GATSBY_POSTHOG_HOST,
+              head: true,
+            },
+          },
+        ]
+      : []),
   ],
 }
