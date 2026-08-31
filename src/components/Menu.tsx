@@ -11,6 +11,7 @@ const routes = {
   '/about': 'About',
   '/blog': 'Articles',
   '/talks': 'Talks',
+  '/projects': 'Projects',
 }
 
 const variants = {
