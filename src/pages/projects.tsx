@@ -7,6 +7,7 @@ import {
   Flex,
   Text,
   Heading,
+  PreviewFrame,
   Section,
   Seo,
 } from '../components'
@@ -19,9 +20,11 @@ type Project = {
   github?: string
   live?: string
   section: 'playground' | 'tools'
+  featured: boolean
+  embeddable?: boolean
 }
 
-const typedProjects = projects as Project[]
+const typedProjects = (projects as Project[]).filter((p) => p.featured)
 
 const sections = [
   { key: 'playground', title: 'Playground' },
@@ -32,6 +35,12 @@ const ProjectList = ({ projects }: { projects: Project[] }) => (
   <Box>
     {projects.map((project) => (
       <Box key={project.name} css={css({ ':not(:last-child)': { mb: '4' } })}>
+        {project.live && project.embeddable && (
+          <Box mb='3'>
+            <PreviewFrame src={project.live} title={project.name} />
+          </Box>
+        )}
+
         <Text fontSize='6' fontWeight='3' lineHeight='3.2rem'>
           {project.name}
         </Text>

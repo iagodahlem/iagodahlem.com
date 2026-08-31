@@ -5,7 +5,9 @@
     "language": "TypeScript",
     "github": "https://github.com/iagodahlem/clock-panel",
     "live": "https://iagodahlem.github.io/clock-panel/",
-    "section": "playground"
+    "section": "playground",
+    "featured": true,
+    "embeddable": true
   },
   {
     "name": "audio-lab",
@@ -13,7 +15,9 @@
     "language": "TypeScript",
     "github": "https://github.com/iagodahlem/audio-lab",
     "live": "https://iagodahlem.github.io/audio-lab/",
-    "section": "playground"
+    "section": "playground",
+    "featured": true,
+    "embeddable": true
   },
   {
     "name": "knife-hit",
@@ -21,7 +25,9 @@
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/knife-hit",
     "live": "https://iagodahlem.com/knife-hit/",
-    "section": "playground"
+    "section": "playground",
+    "featured": true,
+    "embeddable": true
   },
   {
     "name": "stars-and-bombs",
@@ -29,7 +35,9 @@
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/stars-and-bombs",
     "live": "https://iagodahlem.com/stars-and-bombs/",
-    "section": "playground"
+    "section": "playground",
+    "featured": true,
+    "embeddable": true
   },
   {
     "name": "matrix",
@@ -37,7 +45,9 @@
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/matrix",
     "live": "https://matrix.iagodahlem.com",
-    "section": "playground"
+    "section": "playground",
+    "featured": true,
+    "embeddable": true
   },
   {
     "name": "drumpad",
@@ -45,7 +55,9 @@
     "language": "HTML",
     "github": "https://github.com/iagodahlem/drumpad",
     "live": "https://iagodahlem.com/drumpad",
-    "section": "playground"
+    "section": "playground",
+    "featured": true,
+    "embeddable": false
   },
   {
     "name": "3d-cube",
@@ -53,7 +65,9 @@
     "language": "HTML",
     "github": "https://github.com/iagodahlem/3d-cube",
     "live": "https://iagodahlem.com/3d-cube",
-    "section": "playground"
+    "section": "playground",
+    "featured": true,
+    "embeddable": false
   },
   {
     "name": "clonepen",
@@ -61,7 +75,9 @@
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/clonepen",
     "live": "https://iagodahlem.com/clonepen",
-    "section": "playground"
+    "section": "playground",
+    "featured": true,
+    "embeddable": true
   },
   {
     "name": "calc",
@@ -69,35 +85,41 @@
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/calc",
     "live": "https://iagodahlem.com/calc",
-    "section": "playground"
+    "section": "playground",
+    "featured": true,
+    "embeddable": true
   },
   {
     "name": "cqlite",
     "description": "A small SQLite clone, written in C.",
     "language": "C",
     "github": "https://github.com/iagodahlem/cqlite",
-    "section": "playground"
+    "section": "playground",
+    "featured": false
   },
   {
     "name": "kv_umbrella",
     "description": "A distributed key-value store, written in Elixir.",
     "language": "Elixir",
     "github": "https://github.com/iagodahlem/kv_umbrella",
-    "section": "playground"
+    "section": "playground",
+    "featured": false
   },
   {
     "name": "lisp-to-c-compiler",
     "description": "A small Lisp-to-C compiler, built to learn how compilers work.",
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/lisp-to-c-compiler",
-    "section": "playground"
+    "section": "playground",
+    "featured": false
   },
   {
     "name": "rydux",
     "description": "A small Redux implementation, ported to Ruby.",
     "language": "Ruby",
     "github": "https://github.com/iagodahlem/rydux",
-    "section": "playground"
+    "section": "playground",
+    "featured": false
   },
   {
     "name": "domainproof",
@@ -105,14 +127,17 @@
     "language": "TypeScript",
     "github": "https://github.com/iagodahlem/domainproof",
     "live": "https://domainproof.dev",
-    "section": "tools"
+    "section": "tools",
+    "featured": true,
+    "embeddable": true
   },
   {
     "name": "straper",
     "description": "A CLI that scaffolds AI agent workspaces and manages their skills through a versioned registry.",
     "language": "Shell",
     "github": "https://github.com/iagodahlem/straper",
-    "section": "tools"
+    "section": "tools",
+    "featured": false
   },
   {
     "name": "flokit",
@@ -120,7 +145,9 @@
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/flokit",
     "live": "https://flokit.iagodahlem.com/",
-    "section": "tools"
+    "section": "tools",
+    "featured": true,
+    "embeddable": true
   },
   {
     "name": "tiempo",
@@ -128,7 +155,9 @@
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/tiempo",
     "live": "https://tiempo.iagodahlem.com",
-    "section": "tools"
+    "section": "tools",
+    "featured": true,
+    "embeddable": true
   },
   {
     "name": "roll.js",
@@ -136,20 +165,24 @@
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/roll.js",
     "live": "https://iagodahlem.github.io/roll.js/",
-    "section": "tools"
+    "section": "tools",
+    "featured": true,
+    "embeddable": true
   },
   {
     "name": "cerebro-translate",
     "description": "A Cerebro plugin for translating text with the Google Translate API.",
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/cerebro-translate",
-    "section": "tools"
+    "section": "tools",
+    "featured": false
   },
   {
     "name": "clima-cli",
     "description": "A simple CLI that shows the weather.",
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/clima-cli",
-    "section": "tools"
+    "section": "tools",
+    "featured": false
   }
 ]
