@@ -1,13 +1,11 @@
 import React from 'react'
 import css from '@styled-system/css'
-import { motion } from 'framer-motion'
 import {
   Box,
   Container,
   Flex,
-  Text,
   Heading,
-  PreviewFrame,
+  ProjectCard,
   Section,
   Seo,
 } from '../components'
@@ -32,57 +30,18 @@ const sections = [
 ] as const
 
 const ProjectList = ({ projects }: { projects: Project[] }) => (
-  <Box>
-    {projects.map((project) => (
-      <Box key={project.name} css={css({ ':not(:last-child)': { mb: '4' } })}>
-        {project.live && project.embeddable && (
-          <Box mb='3'>
-            <PreviewFrame src={project.live} title={project.name} />
-          </Box>
-        )}
-
-        <Text fontSize='6' fontWeight='3' lineHeight='3.2rem'>
-          {project.name}
-        </Text>
-
-        <Text lineHeight='3.2rem' color='gray.300'>
-          <em>{project.description}</em>
-        </Text>
-
-        <Text color='gray.300'>{project.language}</Text>
-
-        <Box as='ul' m='0' mt='2'>
-          <Box as='li'>
-            <Text
-              as={motion.a}
-              href={project.github}
-              target='_blank'
-              rel='noreferrer'
-              whileHover={{ opacity: 0.6 }}
-              color='gray.300'
-              css={css({ textDecoration: 'underline' })}
-            >
-              <em>GitHub</em>
-            </Text>
-          </Box>
-
-          {project.live && (
-            <Box as='li'>
-              <Text
-                as={motion.a}
-                href={project.live}
-                target='_blank'
-                rel='noreferrer'
-                whileHover={{ opacity: 0.6 }}
-                color='gray.300'
-                css={css({ textDecoration: 'underline' })}
-              >
-                <em>Live</em>
-              </Text>
-            </Box>
-          )}
-        </Box>
-      </Box>
+  <Box
+    css={css({
+      display: 'grid',
+      gridTemplateColumns: '1fr',
+      gap: '24px',
+      '@media (min-width: 56rem)': {
+        gridTemplateColumns: 'repeat(2, 1fr)',
+      },
+    })}
+  >
+    {projects.map((project, index) => (
+      <ProjectCard key={project.name} project={project} index={index} />
     ))}
   </Box>
 )
@@ -95,6 +54,7 @@ const ProjectsPage = (props) => {
       <Section>
         <Container
           as={Flex}
+          maxWidth='960px'
           flexDirection='column'
           justifyContent='center'
           alignItems='flex-start'
