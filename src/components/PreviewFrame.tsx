@@ -29,7 +29,11 @@ const PreviewFrame = ({ src, title }: { src: string; title: string }) => {
       position='relative'
       width='100%'
       overflow='hidden'
-      css={css({ aspectRatio: '16 / 10' })}
+      border='1px solid rgba(255, 255, 255, 0.12)'
+      css={css({
+        aspectRatio: '16 / 10',
+        backgroundColor: 'rgba(255, 255, 255, 0.04)',
+      })}
     >
       {scale > 0 && (
         <Box
