@@ -43,9 +43,6 @@ const PreviewFrame = (props: PreviewFrameProps) => {
         justifyContent='center'
         css={css({
           aspectRatio: ASPECT_RATIO,
-          backgroundColor: 'rgba(255, 255, 255, 0.03)',
-          backgroundImage:
-            'repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 10px)',
         })}
       >
         <Flex
@@ -56,10 +53,11 @@ const PreviewFrame = (props: PreviewFrameProps) => {
           <Text
             fontSize='3'
             fontWeight='3'
-            color='gray.500'
+            color='gray.300'
             css={css({
               fontFamily: 'monospace',
-              border: '1px solid rgba(255, 255, 255, 0.14)',
+              border: '1px solid',
+              borderColor: 'gray.300',
               borderRadius: '6px',
               padding: '4px 10px',
               letterSpacing: '0.03em',
@@ -67,7 +65,7 @@ const PreviewFrame = (props: PreviewFrameProps) => {
           >
             {props.language}
           </Text>
-          <Text fontSize='2' color='gray.600'>
+          <Text fontSize='2' color='gray.300'>
             {props.note}
           </Text>
         </Flex>
@@ -83,7 +81,6 @@ const PreviewFrame = (props: PreviewFrameProps) => {
       overflow='hidden'
       css={css({
         aspectRatio: ASPECT_RATIO,
-        backgroundColor: 'rgba(255, 255, 255, 0.04)',
       })}
     >
       {scale > 0 && (

@@ -4,7 +4,7 @@
     "description": "A panel of small analog clocks that display the time together, a canvas motion study.",
     "language": "TypeScript",
     "github": "https://github.com/iagodahlem/clock-panel",
-    "live": "https://iagodahlem.github.io/clock-panel/",
+    "live": "https://clock-panel.vercel.app/",
     "section": "playground",
     "featured": true,
     "embeddable": true

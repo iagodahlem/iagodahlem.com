@@ -37,13 +37,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
       width='100%'
       css={css({
         borderRadius: '10px',
-        border: '1px solid rgba(255, 255, 255, 0.12)',
-        backgroundColor: 'rgba(255, 255, 255, 0.03)',
-        boxShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
-        transition: 'border-color 200ms ease, box-shadow 200ms ease',
+        border: '1px solid',
+        borderColor: 'gray.300',
+        transition: 'border-color 200ms ease',
         '&:hover': {
-          borderColor: 'rgba(255, 255, 255, 0.28)',
-          boxShadow: '0 20px 36px -16px rgba(0, 0, 0, 0.55)',
+          borderColor: 'black',
         },
       })}
     >
@@ -68,47 +66,15 @@ const ProjectCard = ({ project }: { project: Project }) => {
         py='4'
         css={css({ gap: '12px' })}
       >
-        <Flex alignItems='center' css={css({ gap: '10px' })}>
-          {isLive && (
-            <>
-              <Box
-                aria-hidden='true'
-                css={css({
-                  width: '8px',
-                  height: '8px',
-                  borderRadius: '50%',
-                  backgroundColor: '#3ecf6e',
-                  flexShrink: 0,
-                })}
-              />
-              <Text
-                as='span'
-                css={css({
-                  position: 'absolute',
-                  width: '1px',
-                  height: '1px',
-                  padding: 0,
-                  margin: '-1px',
-                  overflow: 'hidden',
-                  clip: 'rect(0, 0, 0, 0)',
-                  whiteSpace: 'nowrap',
-                  border: 0,
-                })}
-              >
-                Live —{' '}
-              </Text>
-            </>
-          )}
-          <Heading
-            as='h3'
-            m='0'
-            fontSize='5'
-            fontWeight='3'
-            css={css({ fontFamily: 'monospace' })}
-          >
-            {project.name}
-          </Heading>
-        </Flex>
+        <Heading
+          as='h3'
+          m='0'
+          fontSize='5'
+          fontWeight='3'
+          css={css({ fontFamily: 'monospace' })}
+        >
+          {project.name}
+        </Heading>
 
         <Text
           fontSize='4'
@@ -118,49 +84,15 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {project.description}
         </Text>
 
-        <Flex alignItems='center' mt='auto' pt='2' css={css({ gap: '12px' })}>
-          <Text
-            as='span'
-            fontSize='2'
-            fontWeight='3'
-            color='gray.400'
-            css={css({
-              fontFamily: 'monospace',
-              border: '1px solid rgba(255, 255, 255, 0.14)',
-              borderRadius: '6px',
-              padding: '2px 8px',
-            })}
-          >
-            {project.language}
-          </Text>
-
-          <Flex ml='auto' css={css({ gap: '16px' })}>
-            {isLive && (
-              <Text
-                as={motion.a}
-                href={project.live}
-                target='_blank'
-                rel='noreferrer'
-                fontSize='3'
-                fontWeight='3'
-                whileHover={{ opacity: 0.6 }}
-                css={css({
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                })}
-              >
-                Open live <span aria-hidden='true'>↗</span>
-              </Text>
-            )}
+        <Flex alignItems='center' mt='auto' pt='2' css={css({ gap: '16px' })}>
+          {isLive && (
             <Text
               as={motion.a}
-              href={project.github}
+              href={project.live}
               target='_blank'
               rel='noreferrer'
-              fontSize='3'
+              fontSize='5'
               fontWeight='3'
-              color='gray.400'
               whileHover={{ opacity: 0.6 }}
               css={css({
                 display: 'inline-flex',
@@ -168,9 +100,25 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 gap: '4px',
               })}
             >
-              Source <span aria-hidden='true'>↗</span>
+              Open live <span aria-hidden='true'>↗</span>
             </Text>
-          </Flex>
+          )}
+          <Text
+            as={motion.a}
+            href={project.github}
+            target='_blank'
+            rel='noreferrer'
+            fontSize='5'
+            fontWeight='3'
+            whileHover={{ opacity: 0.6 }}
+            css={css({
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '4px',
+            })}
+          >
+            Source <span aria-hidden='true'>↗</span>
+          </Text>
         </Flex>
       </Flex>
     </Box>
