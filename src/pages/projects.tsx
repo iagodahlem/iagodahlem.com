@@ -40,8 +40,8 @@ const ProjectList = ({ projects }: { projects: Project[] }) => (
       },
     })}
   >
-    {projects.map((project, index) => (
-      <ProjectCard key={project.name} project={project} index={index} />
+    {projects.map((project) => (
+      <ProjectCard key={project.name} project={project} />
     ))}
   </Box>
 )
