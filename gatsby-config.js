@@ -84,14 +84,19 @@ module.exports = {
         trackingIds: ['UA-84438304-1'],
       },
     },
-    ...(process.env.GATSBY_POSTHOG_KEY && process.env.GATSBY_POSTHOG_HOST
+    ...(process.env.GATSBY_POSTHOG_KEY
       ? [
           {
             resolve: 'gatsby-plugin-posthog',
             options: {
               apiKey: process.env.GATSBY_POSTHOG_KEY,
-              apiHost: process.env.GATSBY_POSTHOG_HOST,
+              apiHost: 'https://t.iagodahlem.com',
               head: true,
+              initOptions: {
+                ui_host: 'https://us.posthog.com',
+                defaults: '2026-05-30',
+                person_profiles: 'identified_only',
+              },
             },
           },
         ]
