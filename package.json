@@ -1,4 +1,5 @@
 {
+  "name": "iagodahlem-com",
   "private": true,
   "scripts": {
     "dev": "yarn develop",
