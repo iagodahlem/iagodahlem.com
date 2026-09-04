@@ -58,6 +58,34 @@ The repo pins Node 16.2.0 (`.nvmrc`), which is too old for the converter scripts
 (`node:fs` has no `cpSync` before 16.7). Run the repo's `yarn install` on 16.2.0, but
 run **all `.ds-sync/` scripts and `build-dist.mjs` on Node 22** (`~/.nvm/versions/node/v22.21.1/bin/node`).
 
+## Commands (in order)
+
+The three setup steps are not optional — see the two sections above for why.
+
+```bash
+N=~/.nvm/versions/node/v22.21.1/bin/node        # NOT the repo's pinned 16.2.0
+
+yarn install --frozen-lockfile                   # on Node 16.2.0
+bash .design-sync/setup-node-modules.sh          # react 18 override -> .design-sync/.cache/nm
+$N .design-sync/build-dist.mjs                   # cfg.buildCmd: babel css-prop transform -> dist/
+
+# converter (staged scripts live in .ds-sync/, gitignored — re-copy from the skill if absent)
+$N .ds-sync/package-build.mjs --config .design-sync/config.json \
+   --node-modules ./.design-sync/.cache/nm --entry ./dist/.design-sync/entry.js --out ./ds-bundle
+$N .ds-sync/package-validate.mjs ./ds-bundle
+$N .ds-sync/package-capture.mjs --out ./ds-bundle
+
+# final build before any upload must be a driver run (regenerates .sync-diff.json)
+$N .ds-sync/resync.mjs --config .design-sync/config.json \
+   --node-modules ./.design-sync/.cache/nm --out ./ds-bundle \
+   --entry ./dist/.design-sync/entry.js --remote .design-sync/.cache/remote-sync.json
+```
+
+On a re-sync, first save the project's anchor to `.design-sync/.cache/remote-sync.json`
+(`DesignSync get_file _ds_sync.json`) so the driver can skip unchanged components.
+Playwright must match a cached chromium build — `playwright@1.61.1` pins chromium-1228,
+which is what is in `~/.cache/ms-playwright/`.
+
 ## Styling and fonts
 
 - `[CSS_RUNTIME]` is the correct, expected verdict — styled-components injects
