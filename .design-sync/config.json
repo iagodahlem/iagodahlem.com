@@ -2,6 +2,7 @@
   "pkg": "iagodahlem-com",
   "globalName": "IagoDS",
   "shape": "package",
+  "projectId": "c7021701-7a1c-4976-8c7e-a9abfa3cf4f3",
   "entry": "./dist/.design-sync/entry.js",
   "buildCmd": "node .design-sync/build-dist.mjs",
   "srcDir": "src",
