@@ -5,11 +5,13 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../components/GlobalStyle'
 import PrinterLayout from './PrinterLayout'
 import SiteLayout from './SiteLayout'
-import theme from '../theme'
+import theme, { printTheme } from '../theme'
 
 const Layout = ({ children, pageContext }) => {
+  const isPrinter = pageContext?.layout === 'printer'
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={isPrinter ? printTheme : theme}>
       <Helmet>
         <link
           href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Arvo:400,700'
@@ -19,7 +21,7 @@ const Layout = ({ children, pageContext }) => {
 
       <GlobalStyle />
 
-      {pageContext?.layout === 'printer' ? (
+      {isPrinter ? (
         <PrinterLayout>{children}</PrinterLayout>
       ) : (
         <SiteLayout>{children}</SiteLayout>

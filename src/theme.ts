@@ -44,6 +44,8 @@ const fontSizes = [0, 5, 7, 9, 12, 16, 21, 28, 37, 50, 67, 89].map(
 
 const fontWeights = [0, 400, 500, 600, 700]
 
+const baseFontSize = '62.5%' // 1rem = 10px of the default 16px browser font-size
+
 const theme = {
   colors,
   space,
@@ -51,6 +53,7 @@ const theme = {
   fonts,
   fontSizes,
   fontWeights,
+  baseFontSize,
 }
 
 const themes = {
@@ -67,5 +70,23 @@ const themes = {
 
 // const linearGradient = (color) =>
 //   `linear-gradient(90deg, ${rgba(color, 0)} 0%, ${rgba(color, 1)} 100%)`
+
+// The /resume PDF export (PrinterLayout) needs to fit on one physical page.
+// These two factors shrink every rem-based size (headings and body copy, via
+// baseFontSize) and every space-prop margin/padding (Section's py, heading
+// and job gaps, via the space scale) proportionally, so nothing needs
+// hand-tuning per element. Only the /resume route uses this theme — see
+// Layout.tsx, which selects it when `pageContext.layout === 'printer'`.
+const PRINT_FONT_SCALE = 0.72
+const PRINT_SPACE_SCALE = 0.125
+
+export const printTheme = {
+  ...themes.dark,
+  baseFontSize: `${parseFloat(baseFontSize) * PRINT_FONT_SCALE}%`,
+  space: {
+    ...spaceScale.map((n) => Math.round(n * PRINT_SPACE_SCALE)),
+    ...componentsScale,
+  },
+}
 
 export default themes.dark
