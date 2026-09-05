@@ -1,5 +1,15 @@
 [
   {
+    "name": "pixel-garage",
+    "description": "Two pixel-art vehicles on a canvas, a spaceship and a car, drawn pixel by pixel on a grid.",
+    "language": "JavaScript",
+    "github": "https://github.com/iagodahlem/pixel-garage",
+    "live": "https://pixel-garage.iagodahlem.com",
+    "section": "playground",
+    "featured": true,
+    "embeddable": true
+  },
+  {
     "name": "clock-panel",
     "description": "A panel of small analog clocks that display the time together, a canvas motion study.",
     "language": "TypeScript",
@@ -70,16 +80,6 @@
     "embeddable": false
   },
   {
-    "name": "clonepen",
-    "description": "A small clone of CodePen, the online code playground.",
-    "language": "JavaScript",
-    "github": "https://github.com/iagodahlem/clonepen",
-    "live": "https://iagodahlem.com/clonepen",
-    "section": "playground",
-    "featured": true,
-    "embeddable": true
-  },
-  {
     "name": "calc",
     "description": "A calculator built with React and Redux.",
     "language": "JavaScript",
@@ -140,31 +140,11 @@
     "featured": false
   },
   {
-    "name": "flokit",
-    "description": "A toolkit for building smooth, animated UIs with React.",
-    "language": "JavaScript",
-    "github": "https://github.com/iagodahlem/flokit",
-    "live": "https://flokit.iagodahlem.com/",
-    "section": "tools",
-    "featured": true,
-    "embeddable": true
-  },
-  {
     "name": "tiempo",
     "description": "A Pomodoro app for the modern web.",
     "language": "JavaScript",
     "github": "https://github.com/iagodahlem/tiempo",
     "live": "https://tiempo.iagodahlem.com",
-    "section": "tools",
-    "featured": true,
-    "embeddable": true
-  },
-  {
-    "name": "roll.js",
-    "description": "A small, dependency-free scroll-to-top utility.",
-    "language": "JavaScript",
-    "github": "https://github.com/iagodahlem/roll.js",
-    "live": "https://iagodahlem.github.io/roll.js/",
     "section": "tools",
     "featured": true,
     "embeddable": true
