@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Iago Dahlem Lorensini',
     description:
-      "Hey there! I'm Iago — a software engineer from Florianópolis, Brazil. Most recently at Clerk, now open to new roles and consulting.",
+      "Hey there! I'm Iago — a software engineer from Florianópolis, Brazil.",
     siteUrl: 'https://iagodahlem.com',
     author: {
       name: 'Iago Dahlem Lorensini',
