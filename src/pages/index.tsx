@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { motion } from 'framer-motion'
 import {
   Articles,
   Container,
@@ -39,16 +38,6 @@ const IndexPage = ({ data }) => {
           >
             Hi! 👋 I'm Iago.
             <br />A software engineer from Brazil.
-            <br />
-            Most recently at{' '}
-            <Text
-              as={motion.a}
-              href='https://clerk.com'
-              whileHover={{ opacity: 0.6 }}
-            >
-              Clerk.com
-            </Text>{' '}
-            — now open to new roles and consulting.
           </Text>
 
           <Nav />
